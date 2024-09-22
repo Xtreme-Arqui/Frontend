@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px; /* Ancho del panel */
+  height: 100vh; /* Altura completa de la ventana */
+  background-color: #EAEAEA; /* Color de fondo del panel */
+  color: white; /* Color del texto */
+  position: fixed; /* Fijo a la izquierda */
+}
+
+.sidebar ul {
+  list-style-type: none; /* Quitar estilo de lista */
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 15px; /* Espaciado en los elementos */
+}
+
+.sidebar a {
+  color: white; /* Color de los enlaces */
+  text-decoration: none; /* Quitar subrayado */
+}
+
+.sidebar a:hover {
+  background-color: #34495e; /* Color de fondo al pasar el ratón */
+}
+
+.header {
+  margin-left: 200px; /* Dejar espacio para el panel */
+  padding: 10px; /* Espaciado interno */
+  background-color: #2980b9; /* Color de fondo del header */
+  color: white; /* Color del texto del header */
+  position: fixed; /* Fijo en la parte superior */
+  width: calc(100% - 200px); /* Ancho completo menos el panel */
+  top: 0; /* Fijo en la parte superior */
+  z-index: 1; /* Asegúrate de que esté encima de otros elementos */
+}
+
+.content {
+  margin-left: 200px; /* Dejar espacio para el panel */
+  margin-top: 60px; /* Dejar espacio debajo del header */
+  padding: 20px; /* Espaciado interno */
+}

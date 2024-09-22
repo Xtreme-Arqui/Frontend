@@ -1,0 +1,47 @@
+.publications-container {
+  display: flex;
+  align-items: center;
+}
+
+.add-button {
+  margin-left: auto;
+}
+
+mat-card{
+  max-width: 400px;
+
+}
+.container{
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.options {
+  flex-basis: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.estrellas{
+
+}
+
+.estrella{
+  color: #FFD700;
+  font-size: 25px;
+  height: auto;
+  width: auto;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.mat-card {
+  flex: 1 1 calc(33.333% - 16px);
+  box-sizing: border-box;
+}

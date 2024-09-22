@@ -1,0 +1,20 @@
+.header-content1 {
+  height: 10%;
+  display: flex;
+  background-color: #223240;
+  color: white;
+  width: 100%;
+  margin-bottom: 2px;
+  top: 0;
+  position: sticky;
+  z-index: 1000;
+}
+
+.action-button {
+  display: flex;
+  font-size: large;
+  align-items: center;
+  color: white !important;
+  margin: 15px;
+}
+

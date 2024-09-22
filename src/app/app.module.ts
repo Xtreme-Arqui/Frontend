@@ -5,17 +5,28 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from "../shared/material.module";
+import {HeaderContentComponent} from "./web/components/header-content/header-content.component";
+import {AppRoutingModule} from "./app-routing.module";
+import {PanelComponent} from "./web/components/panel/panel.component";
+import {PublicationsComponent} from "./publications/publications.component";
 
-@NgModule({ 
+
+@NgModule({
     declarations: [
         AppComponent,
+        HeaderContentComponent,
+      PanelComponent,
+      PublicationsComponent,
+
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
         RouterModule,
-        MaterialModule
+        MaterialModule,
+      AppRoutingModule
+
     ],
     providers: [],
     bootstrap: [AppComponent]
