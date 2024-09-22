@@ -12,7 +12,8 @@ mat-card{
 
 }
 .container{
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-content: center;
   align-items: center;
 }
@@ -24,8 +25,12 @@ mat-card{
   justify-content: center;
 }
 
+.title, .price, .estrellas {
+  margin: 10px 0;
+}
 .estrellas{
-
+  display: flex;
+  justify-content: center;
 }
 
 .estrella{
@@ -44,4 +49,10 @@ mat-card{
 .mat-card {
   flex: 1 1 calc(33.333% - 16px);
   box-sizing: border-box;
+}
+
+.color-button{
+  color: white;
+  background-color: #93D94E;
+  border: none;
 }
