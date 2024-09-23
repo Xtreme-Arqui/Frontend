@@ -1,5 +1,9 @@
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
+
 .main-content {
   margin-left: 200px; /* Ancho del panel */
   padding: 20px;
 
 }
+
+
