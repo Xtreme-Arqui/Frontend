@@ -16,8 +16,8 @@ import {LeafletModule} from "@asymmetrik/ngx-leaflet";
 
 @NgModule({
   declarations: [
-        AppComponent,
-        HeaderContentComponent,
+      AppComponent,
+      HeaderContentComponent,
       PanelComponent,
       PublicationsComponent,
       ProfileComponent,
@@ -27,11 +27,11 @@ import {LeafletModule} from "@asymmetrik/ngx-leaflet";
 
     ],
     imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        HttpClientModule,
-        RouterModule,
-        MaterialModule,
+      BrowserModule,
+      BrowserAnimationsModule,
+      HttpClientModule,
+      RouterModule,
+      MaterialModule,
       AppRoutingModule,
       LeafletModule,
 
