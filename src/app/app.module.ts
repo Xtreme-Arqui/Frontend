@@ -9,6 +9,7 @@ import {HeaderContentComponent} from "./web/components/header-content/header-con
 import {AppRoutingModule} from "./app-routing.module";
 import {PanelComponent} from "./web/components/panel/panel.component";
 import {PublicationsComponent} from "./publications/publications.component";
+import {ProfileComponent} from "./profile/profile.component";
 
 
 @NgModule({
@@ -17,6 +18,8 @@ import {PublicationsComponent} from "./publications/publications.component";
         HeaderContentComponent,
       PanelComponent,
       PublicationsComponent,
+      ProfileComponent,
+
 
     ],
     imports: [
