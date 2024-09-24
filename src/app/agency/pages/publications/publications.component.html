@@ -1,0 +1,27 @@
+<div>
+  <h2 style="font-weight: bold; padding-top: 10px;">Publications</h2>
+  <button class="buttonAdd">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+<hr style="border: 1px solid #367356; margin: 20px 0;">
+<div class="container">
+  
+  <mat-card class="card-route" *ngFor="let route of routes" style="margin-top: 10px;">
+    <div class="imageRoute">
+      <img [src]="route.photos" alt="Image of a {{ route.name }}" class="image">
+    </div>
+
+    <mat-card-content class="textCard">
+      <p>{{ route.name }}</p> 
+      <p>{{ route.price }}</p>
+      
+      
+      
+    </mat-card-content>
+    <mat-card-actions style="display: flex; flex-direction: column; align-items: center; ">
+      <button >more details</button>
+    </mat-card-actions>
+  </mat-card>
+        
+  </div>

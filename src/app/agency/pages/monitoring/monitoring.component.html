@@ -1,0 +1,28 @@
+<div class="container">
+
+  <div class="content">
+    <mat-card *ngFor="let tourist of tourists">
+  
+      <mat-card-content class="tourist-card">
+        <div>
+          <img class="photoTourist" [src]="tourist.photo" alt="Image of a {{ tourist.name }}">
+        </div>
+
+        <div class="info">
+          <p> {{tourist.name}} </p>
+          <div class="state-device">
+            <mat-icon>bluetooth</mat-icon> <p> Connected </p> 
+          </div>
+          <div class="state-device">
+            <mat-icon>battery_std</mat-icon> <p> 60% </p> 
+          </div>
+        </div>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+
+  <div class="map-container">
+    <div id="map"></div>
+  </div>
+</div>

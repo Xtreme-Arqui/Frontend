@@ -1,0 +1,43 @@
+<mat-toolbar>
+    <button class="button-content" mat-icon-button *ngIf="!(isScreenLarge | async)" (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <img src="../../../favicon.ico" alt="Logo" class="logo" height="70px">
+    
+  </mat-toolbar>
+  
+  <mat-sidenav-container class="sidenav-container" style="width: 100%; height: calc(100% - 100px)">
+    <mat-sidenav #sidenav class="menu-items" mode="side" [opened]="isScreenLarge | async">
+      <div class="container">
+        <mat-nav-list style="display: flex; flex-direction: column; align-items: center;">
+  
+          <button mat-button routerLink="/home/services" [ngStyle]="{'color': isSelected('/home/pets') ? '#042440' : ''}">
+            <mat-icon [ngStyle]="{'color': isSelected('/home/services') ? '#042440' : ''}">home</mat-icon>
+            Home
+          </button>
+          <button mat-button routerLink="/home/monitoring"
+            [ngStyle]="{'color': isSelected('/home/monitoring') ? '#042440' : ''}">
+            <mat-icon [ngStyle]="{'color': isSelected('/home/monitoring') ? '#042440' : ''}">room</mat-icon>
+            Monitoring
+          </button>
+          <button mat-button routerLink="/home/profile"
+            [ngStyle]="{'color': isSelected('/home/profile') ? '#042440' : ''}">
+            <mat-icon [ngStyle]="{'color': isSelected('/home/profile') ? '#042440' : ''}">person</mat-icon>
+            Profile
+          </button>
+          <button mat-button routerLink="/home/account"
+            [ngStyle]="{'color': isSelected('/home/account') ? '#042440' : ''}">
+            <mat-icon
+              [ngStyle]="{'color': isSelected('/home/account') ? '#042440' : ''}">settings</mat-icon>
+              Account
+          </button>
+
+        </mat-nav-list>
+      </div>
+    </mat-sidenav>
+  
+    <mat-sidenav-content class="content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
