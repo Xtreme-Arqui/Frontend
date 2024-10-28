@@ -1,0 +1,125 @@
+<div>
+    <div class="title" *ngIf="route">
+        <h2 style="font-weight: bold; padding-top: 10px;">{{route.name}}</h2>
+        <hr style="border: 1px solid #367356; margin: 20px 0;">
+    </div>
+
+    <div class="container" *ngIf="route">
+        <div class="left" style="width: 60%; padding-left: 10px;">
+            <div class="image-gallery">
+                <div class="main-image">
+                    <img [src]="mainImage" alt="Main image" loading="lazy"/>
+                  </div>
+                  <div class="carousel-thumbnails">
+                    <img *ngFor="let image of route.photos" [src]="image" alt="Thumbnail" 
+                         [class.active]="image === mainImage" (click)="changeMainImage(image)" />
+                  </div>
+            </div>
+            <div class="more">
+                <div class="info" style="width: 50%;">
+                                                        <!-- Cambiar por el ID de la agencia a la que pertenece -->
+                    <p>for <strong class="link_agency" [routerLink]="'/home/agency/'+ route.agencyId">agency TravelNew</strong></p>
+                    <strong style="font-size: 25px;">$ {{route.price}}</strong>
+                </div>
+                <div class="contact" style="width: 50%;">
+                    <strong style="font-size: 25px;">Contact:</strong>
+                    <div class="icons">
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">  
+                            <img src="../../../../assets/images/icon_whatsapp.png" alt="whatsApp"/></a>
+                        <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer">
+                            <img src="../../../../assets/images/icon_instagram.png" alt="instagram"/></a>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                        <img src="../../../../assets/images/icon_facebook.png" alt="facebook"/></a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="description">
+                <p class="itinerary">Itinerary description</p>
+                <p>{{route.description}}</p>
+            </div>
+        </div>
+        <div class="right" style="width: 40%; padding: 20px;">
+            <div class="statistics">
+                <p class="title_statistics">Route Statistics</p>
+                <div class="colums_statistics" style="display: flex; width: 100%;">
+                    <div class="column">
+                        <span class="feature">Distance</span>
+                        <p>{{route.distance}}</p>
+                        <span class="feature">Maximum</span>
+                        <span class="feature">altitude</span>
+                        <p>{{route.altMax}}</p>
+                    </div>
+                    <div class="column">
+                        <span class="feature">Difficult</span>
+                        <p>{{route.difficult}}</p>
+                        <span class="feature">Minimum</span>
+                        <span class="feature">altitude</span>
+                        <p>{{route.altMin}}</p>
+                    </div>
+                </div>
+                <span class="feature">Type of route</span>
+                <p>{{route.typeRoute}}</p>
+                <div class="star-rating" style="margin: 10px; height: auto;">
+                    <mat-icon class= "star" *ngFor="let star of [].constructor(route.score); let i = index">
+                      star
+                    </mat-icon>
+                    <mat-icon class= "star" *ngFor="let star of [].constructor(5 - route.score); let i = index">
+                      star_outline
+                    </mat-icon>
+                </div>
+
+            </div>
+            <div class="reviews">
+                <p style="font-size: 30px; font-weight: 500; margin-top: 10px;">Review</p>
+                <div class="create-comment" style="display: flex; flex-direction: column;">
+                    <div style="display: flex;">
+                        <div class="profile_tourist" *ngIf="tourist">
+                            <img [src]="tourist.photo" alt="Image of a {{ tourist.name }}" style="width: 100px; height: 100px; border-radius: 50%;">
+                        </div>
+                        <div style="display: flex; flex-direction: column; margin-left: 15px;">
+                            <span style="margin-left: 10px; margin-bottom: 5px;"> {{ tourist.name }} {{ tourist.lastName }}</span>
+                            <div class="rating">
+                                <i *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
+                                (mouseenter)="hoverRating(i + 1)"
+                                (mouseleave)="hoverRating(0)"
+                                (click)="setRating(i + 1)"
+                                [class.filled]="i < hoverStars || i < ratingFilter">&#9733;</i>
+                            </div>
+                        </div>
+                    </div>
+                    <textarea [(ngModel)]="comment" placeholder="Escribe tu comentario aquí..." style="margin: 5px;"></textarea>
+                    <button class="submit-comment" (click)="submitComment()">Enviar Comentario</button>
+                </div>
+
+                
+                <div *ngFor="let review of reviews">
+                  <div class="comment-box">
+                    <div *ngIf="tourist" style="display: flex;">
+                        <div class="profile_tourist">
+                            <img class="photoTourist" [src]="tourist.photo" alt="Image of a {{ tourist.name }}" style="width: 60px; height: 60px; border-radius: 50%;">
+                        </div>
+                        <div class="information-tourist" style="display: flex; flex-direction: column;">
+                            <div style="display: flex;">
+                                <span style="margin-left: 10px;"> {{ tourist.name }} {{ tourist.lastName }}</span>
+                                <div class="star-reviews" style="margin-left: 10px; height: auto;">
+                                    <mat-icon *ngFor="let star of [].constructor(review.score); let i = index" style="color: gold;">
+                                    star
+                                    </mat-icon>
+                                    <mat-icon *ngFor="let star of [].constructor(5 - review.score); let i = index" style="color: gold;">
+                                    star_outline
+                                    </mat-icon>
+                                </div>
+                            </div>
+                            <span style="font-size: 12px; margin-left: 10px; color: #808080;"> {{review.date}} </span>
+                        </div>
+                        
+                    </div>
+                    
+                    <p>{{ review.description }}</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
