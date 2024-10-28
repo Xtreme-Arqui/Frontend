@@ -1,196 +1,292 @@
 {
-    "agency":[
-        {
-            "id": 1,
-            "name": "agencia",
-            "email": "correo",
-            "password": "agencia",
-            "phoneNumber": 987654321,
-            "description": "agencia nueva",
-            "location": "lima",
-            "ruc": 12345678,
-            "photo": "url",
-            "score": 0
-        }
-    ],
-    "route":[
-        {
-            "id": 1,
-            "name": "Vallunaraju desde Refugio Agosto 2016",
-            "description": "CERRO VINICUNCA PARTIENDO DE TINKE Y LLEGANDO A JAPURA/PITUMARCA/CHECACUPEEste trek hace parte de mi recorrido de 30 días por Perú, Bolivia y Argentina (rutas que también he subido a Wikiloc).Esta -la del Ausangate- es una ruta alternativa al famoso trek de la \"Vuelta al Ausangate\" pero se cubre un hermosìsimo recorrido hasta Pucachocha pero en vez de seguir hacia el Abra Palomani, hay que seguir",
-            "location": "huaraz",
-            "score": 4,
-            "price": 100,
-            "newPrice": 0,
-            "creationDate": "12/10/2024",
-            "photos": "https://s0.wklcdn.com/image_1/59868/15163829/9431613Master.jpg",
-            "isOffer": 0,
-            "isPopular": 0,
-            "distance": 52.63,
-            "dificult": "muy dificil",
-            "altMax": 4988,
-            "altMin": 3772,
-            "typeRoute": "solo ida"
-        },
-        {
-            "id": 2,
-            "name": "Vallunaraju desde Refugio Agosto 2016",
-            "description": "CERRO VINICUNCA PARTIENDO DE TINKE Y LLEGANDO A JAPURA/PITUMARCA/CHECACUPEEste trek hace parte de mi recorrido de 30 días por Perú, Bolivia y Argentina (rutas que también he subido a Wikiloc).Esta -la del Ausangate- es una ruta alternativa al famoso trek de la \"Vuelta al Ausangate\" pero se cubre un hermosìsimo recorrido hasta Pucachocha pero en vez de seguir hacia el Abra Palomani, hay que seguir",
-            "location": "huaraz",
-            "score": 4,
-            "price": 100,
-            "newPrice": 0,
-            "creationDate": "12/10/2024",
-            "photos": "https://s0.wklcdn.com/image_1/59868/15163829/9431613Master.jpg",
-            "isOffer": 0,
-            "isPopular": 0,
-            "distance": 52.63,
-            "dificult": "muy dificil",
-            "altMax": 4988,
-            "altMin": 3772,
-            "typeRoute": "solo ida"
-        },
-        {
-            "id": 3,
-            "name": "Vallunaraju desde Refugio Agosto 2016",
-            "description": "CERRO VINICUNCA PARTIENDO DE TINKE Y LLEGANDO A JAPURA/PITUMARCA/CHECACUPEEste trek hace parte de mi recorrido de 30 días por Perú, Bolivia y Argentina (rutas que también he subido a Wikiloc).Esta -la del Ausangate- es una ruta alternativa al famoso trek de la \"Vuelta al Ausangate\" pero se cubre un hermosìsimo recorrido hasta Pucachocha pero en vez de seguir hacia el Abra Palomani, hay que seguir",
-            "location": "huaraz",
-            "score": 4,
-            "price": 100,
-            "newPrice": 0,
-            "creationDate": "12/10/2024",
-            "photos": "https://s0.wklcdn.com/image_1/59868/15163829/9431613Master.jpg",
-            "isOffer": 0,
-            "isPopular": 0,
-            "distance": 52.63,
-            "dificult": "muy dificil",
-            "altMax": 4988,
-            "altMin": 3772,
-            "typeRoute": "solo ida"
-        },
-        {
-            "id": 4,
-            "name": "Vallunaraju desde Refugio Agosto 2016",
-            "description": "CERRO VINICUNCA PARTIENDO DE TINKE Y LLEGANDO A JAPURA/PITUMARCA/CHECACUPEEste trek hace parte de mi recorrido de 30 días por Perú, Bolivia y Argentina (rutas que también he subido a Wikiloc).Esta -la del Ausangate- es una ruta alternativa al famoso trek de la \"Vuelta al Ausangate\" pero se cubre un hermosìsimo recorrido hasta Pucachocha pero en vez de seguir hacia el Abra Palomani, hay que seguir",
-            "location": "huaraz",
-            "score": 4,
-            "price": 100,
-            "newPrice": 0,
-            "creationDate": "12/10/2024",
-            "photos": "https://s0.wklcdn.com/image_1/59868/15163829/9431613Master.jpg",
-            "isOffer": 0,
-            "isPopular": 0,
-            "distance": 52.63,
-            "dificult": "muy dificil",
-            "altMax": 4988,
-            "altMin": 3772,
-            "typeRoute": "solo ida"
-        },
-        {
-            "id": 5,
-            "name": "Vallunaraju desde Refugio Agosto 2016",
-            "description": "CERRO VINICUNCA PARTIENDO DE TINKE Y LLEGANDO A JAPURA/PITUMARCA/CHECACUPEEste trek hace parte de mi recorrido de 30 días por Perú, Bolivia y Argentina (rutas que también he subido a Wikiloc).Esta -la del Ausangate- es una ruta alternativa al famoso trek de la \"Vuelta al Ausangate\" pero se cubre un hermosìsimo recorrido hasta Pucachocha pero en vez de seguir hacia el Abra Palomani, hay que seguir",
-            "location": "huaraz",
-            "score": 4,
-            "price": 100,
-            "newPrice": 0,
-            "creationDate": "12/10/2024",
-            "photos": "https://s0.wklcdn.com/image_1/59868/15163829/9431613Master.jpg",
-            "isOffer": 0,
-            "isPopular": 0,
-            "distance": 52.63,
-            "dificult": "muy dificil",
-            "altMax": 4988,
-            "altMin": 3772,
-            "typeRoute": "solo ida"
-        },
-        {
-            "id": 6,
-            "name": "Vallunaraju desde Refugio Agosto 2016",
-            "description": "CERRO VINICUNCA PARTIENDO DE TINKE Y LLEGANDO A JAPURA/PITUMARCA/CHECACUPEEste trek hace parte de mi recorrido de 30 días por Perú, Bolivia y Argentina (rutas que también he subido a Wikiloc).Esta -la del Ausangate- es una ruta alternativa al famoso trek de la \"Vuelta al Ausangate\" pero se cubre un hermosìsimo recorrido hasta Pucachocha pero en vez de seguir hacia el Abra Palomani, hay que seguir",
-            "location": "huaraz",
-            "score": 4,
-            "price": 100,
-            "newPrice": 0,
-            "creationDate": "12/10/2024",
-            "photos": "https://s0.wklcdn.com/image_1/59868/15163829/9431613Master.jpg",
-            "isOffer": 0,
-            "isPopular": 0,
-            "distance": 52.63,
-            "dificult": "muy dificil",
-            "altMax": 4988,
-            "altMin": 3772,
-            "typeRoute": "solo ida"
-        }
-    ],
-    "tourist":[
-        {
-            "id": 1,
-            "name": "Frida",
-            "lastName": "Vetancour",
-            "email": "correo@turiste.com",
-            "password": "turista",
-            "phoneNumber": 987654321,
-            "address": "callao",
-            "photo": "https://s1.elespanol.com/2023/06/08/vivir/salud-mental/769933690_233804290_1706x960.jpg"
-        },
-        {
-            "id": 2,
-            "name": "Juan",
-            "lastName": "Bautista",
-            "email": "correo@turiste.com",
-            "password": "turista",
-            "phoneNumber": 987654321,
-            "address": "callao",
-            "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3HBG7VE4Vj7zQVcxw8rM-rgpLAUWVIpQw3w&s"
-        },
-        {
-            "id": 3,
-            "name": "Linda ",
-            "lastName": "Rosaura",
-            "email": "correo@turiste.com",
-            "password": "turista",
-            "phoneNumber": 987654321,
-            "address": "callao",
-            "photo": "https://www.mundopsicologos.com/site/article/62918/52988/la-depresion-cambia-a-las-personas-10-efectos-de-este-trastorno-en-el-comportamiento-y-el-cerebro-0_ai1.jpg"
-        },
-        {
-            "id": 4,
-            "name": "Maria Juana",
-            "lastName": "Bellido",
-            "email": "correo@turiste.com",
-            "password": "turista",
-            "phoneNumber": 987654321,
-            "address": "callao",
-            "photo": "https://static.cegos.es/content/uploads/2023/03/01165224/GettyImages-1300321639.jpg.webp"
-        }
-    ],
-    "boot":[
-        {
-            "id": 1,
-            "name": "bota1",
-            "state": "conectado",
-            "battery": 60
-        },
-        {
-            "id": 2,
-            "name": "bota1",
-            "state": "conectado",
-            "battery": 60
-        },
-        {
-            "id": 3,
-            "name": "bota1",
-            "state": "conectado",
-            "battery": 60
-        },
-        {
-            "id": 4,
-            "name": "bota1",
-            "state": "conectado",
-            "battery": 60
-        }
-    ]
-        
-    
+  "agency": [
+    {
+      "id": "1",
+      "name": "agencia",
+      "email": "correo",
+      "password": "agencia",
+      "phoneNumber": 987654321,
+      "description": "fundada en 2010 por dos hermanos guías de montaña certificados por la Unión Internacional de guías de montaña (UIAGM/IFMGA/AGMP). Somos una empresa enfocada al crecimiento y desarrollo del turismo, que brindamos servicios turísticos de buena calidad, responsabilidad, amabilidad a nuestros clientes. También contamos con profesionales altamente capacitados dentro de la actividad turística de aventura. Andean Peaks ha sido acreditado por el Ministerio de Turismo de Perú y ha sido autorizado por el Ministerio de Comercio Exterior y Turismo de Perú bajo Andean Peaks. Como tal, tiene que cumplir con todas las políticas y leyes que se han aplicado para las agencias de viajes. Nuestra empresa se ha registrado con el número 20602068324.",
+      "location": "lima",
+      "ruc": 12345678,
+      "photo": "https://static.vecteezy.com/system/resources/previews/028/828/181/non_2x/mountain-logo-mountain-climbing-adventure-design-for-climbing-climbing-equipment-and-brand-with-mountain-logo-illustration-vector.jpg",
+      "score": 0
+    }
+  ],
+  "route": [
+    {
+      "id": "1",
+      "agencyId": 1,
+      "name": "Nueva ruta",
+      "description": "CERRO VINICUNCA PARTIENDO DE TINKE Y LLEGANDO A JAPURA/PITUMARCA/CHECACUPEEste trek hace parte de mi recorrido de 30 días por Perú, Bolivia y Argentina (rutas que también he subido a Wikiloc).Esta -la del Ausangate- es una ruta alternativa al famoso trek de la \"Vuelta al Ausangate\" pero se cubre un hermosìsimo recorrido hasta Pucachocha pero en vez de seguir hacia el Abra Palomani, hay que seguir",
+      "location": "huaraz",
+      "score": 3,
+      "price": 100,
+      "newPrice": 0,
+      "creationDate": "12/10/2024",
+      "photos": [
+        "https://s0.wklcdn.com/image_1/59868/15163829/9431613Master.jpg",
+        "https://s2.wklcdn.com/image_47/1428650/17778641/11222435Master.jpg",
+        "https://s2.wklcdn.com/image_142/4283168/39893050/25865318Master.jpg"
+      ],
+      "isOffer": 0,
+      "isPopular": 0,
+      "distance": 52.63,
+      "difficult": "easy",
+      "altMax": 4988,
+      "altMin": 3772,
+      "typeRoute": "one way"
+    },
+    {
+      "id": "2",
+      "agencyId": 1,
+      "name": "Vallunaraju desde Refugio Agosto 2016",
+      "description": "CERRO VINICUNCA PARTIENDO DE TINKE Y LLEGANDO A JAPURA/PITUMARCA/CHECACUPEEste trek hace parte de mi recorrido de 30 días por Perú, Bolivia y Argentina (rutas que también he subido a Wikiloc).Esta -la del Ausangate- es una ruta alternativa al famoso trek de la \"Vuelta al Ausangate\" pero se cubre un hermosìsimo recorrido hasta Pucachocha pero en vez de seguir hacia el Abra Palomani, hay que seguir",
+      "location": "huaraz",
+      "score": 2,
+      "price": 200,
+      "newPrice": 0,
+      "creationDate": "12/10/2024",
+      "photos": [
+        "https://s0.wklcdn.com/image_1/59868/15163829/9431613Master.jpg",
+        "https://s2.wklcdn.com/image_47/1428650/17778641/11222435Master.jpg",
+        "https://s2.wklcdn.com/image_142/4283168/39893050/25865318Master.jpg"
+      ],
+      "isOffer": 0,
+      "isPopular": 0,
+      "distance": 52.63,
+      "difficult": "easy",
+      "altMax": 4988,
+      "altMin": 3772,
+      "typeRoute": "one way"
+    },
+    {
+      "id": "3",
+      "agencyId": 1,
+      "name": "Vallunaraju desde Refugio Agosto 2016",
+      "description": "CERRO VINICUNCA PARTIENDO DE TINKE Y LLEGANDO A JAPURA/PITUMARCA/CHECACUPEEste trek hace parte de mi recorrido de 30 días por Perú, Bolivia y Argentina (rutas que también he subido a Wikiloc).Esta -la del Ausangate- es una ruta alternativa al famoso trek de la \"Vuelta al Ausangate\" pero se cubre un hermosìsimo recorrido hasta Pucachocha pero en vez de seguir hacia el Abra Palomani, hay que seguir",
+      "location": "huaraz",
+      "score": 4,
+      "price": 300,
+      "newPrice": 0,
+      "creationDate": "12/10/2024",
+      "photos": [
+        "https://s0.wklcdn.com/image_1/59868/15163829/9431613Master.jpg",
+        "https://s2.wklcdn.com/image_47/1428650/17778641/11222435Master.jpg",
+        "https://s2.wklcdn.com/image_142/4283168/39893050/25865318Master.jpg"
+      ],
+      "isOffer": 0,
+      "isPopular": 0,
+      "distance": 52.63,
+      "difficult": "easy",
+      "altMax": 4988,
+      "altMin": 3772,
+      "typeRoute": "one way"
+    },
+    {
+      "id": "4",
+      "agencyId": 1,
+      "name": "Vallunaraju desde Refugio Agosto 2016",
+      "description": "CERRO VINICUNCA PARTIENDO DE TINKE Y LLEGANDO A JAPURA/PITUMARCA/CHECACUPEEste trek hace parte de mi recorrido de 30 días por Perú, Bolivia y Argentina (rutas que también he subido a Wikiloc).Esta -la del Ausangate- es una ruta alternativa al famoso trek de la \"Vuelta al Ausangate\" pero se cubre un hermosìsimo recorrido hasta Pucachocha pero en vez de seguir hacia el Abra Palomani, hay que seguir",
+      "location": "huaraz",
+      "score": 4,
+      "price": 400,
+      "newPrice": 0,
+      "creationDate": "12/10/2024",
+      "photos": [
+        "https://s0.wklcdn.com/image_1/59868/15163829/9431613Master.jpg",
+        "https://s2.wklcdn.com/image_47/1428650/17778641/11222435Master.jpg",
+        "https://s2.wklcdn.com/image_142/4283168/39893050/25865318Master.jpg"
+      ],
+      "isOffer": 0,
+      "isPopular": 0,
+      "distance": 52.63,
+      "difficult": "easy",
+      "altMax": 4988,
+      "altMin": 3772,
+      "typeRoute": "one way"
+    },
+    {
+      "id": "5",
+      "agencyId": 1,
+      "name": "Vallunaraju desde Refugio Agosto 2016",
+      "description": "CERRO VINICUNCA PARTIENDO DE TINKE Y LLEGANDO A JAPURA/PITUMARCA/CHECACUPEEste trek hace parte de mi recorrido de 30 días por Perú, Bolivia y Argentina (rutas que también he subido a Wikiloc).Esta -la del Ausangate- es una ruta alternativa al famoso trek de la \"Vuelta al Ausangate\" pero se cubre un hermosìsimo recorrido hasta Pucachocha pero en vez de seguir hacia el Abra Palomani, hay que seguir",
+      "location": "huaraz",
+      "score": 4,
+      "price": 500,
+      "newPrice": 0,
+      "creationDate": "12/10/2024",
+      "photos": [
+        "https://s0.wklcdn.com/image_1/59868/15163829/9431613Master.jpg",
+        "https://s2.wklcdn.com/image_47/1428650/17778641/11222435Master.jpg",
+        "https://s2.wklcdn.com/image_142/4283168/39893050/25865318Master.jpg"
+      ],
+      "isOffer": 0,
+      "isPopular": 0,
+      "distance": 52.63,
+      "difficult": "easy",
+      "altMax": 4988,
+      "altMin": 3772,
+      "typeRoute": "one way"
+    },
+    {
+      "id": "6",
+      "agencyId": 1,
+      "name": "Vallunaraju desde Refugio Agosto 2016",
+      "description": "CERRO VINICUNCA PARTIENDO DE TINKE Y LLEGANDO A JAPURA/PITUMARCA/CHECACUPEEste trek hace parte de mi recorrido de 30 días por Perú, Bolivia y Argentina (rutas que también he subido a Wikiloc).Esta -la del Ausangate- es una ruta alternativa al famoso trek de la \"Vuelta al Ausangate\" pero se cubre un hermosìsimo recorrido hasta Pucachocha pero en vez de seguir hacia el Abra Palomani, hay que seguir",
+      "location": "huaraz",
+      "score": 5,
+      "price": 100,
+      "newPrice": 0,
+      "creationDate": "12/10/2024",
+      "photos": [
+        "https://s0.wklcdn.com/image_1/59868/15163829/9431613Master.jpg",
+        "https://s2.wklcdn.com/image_47/1428650/17778641/11222435Master.jpg",
+        "https://s2.wklcdn.com/image_142/4283168/39893050/25865318Master.jpg"
+      ],
+      "isOffer": 0,
+      "isPopular": 0,
+      "distance": 52.63,
+      "difficult": "easy",
+      "altMax": 4988,
+      "altMin": 3772,
+      "typeRoute": "one way"
+    }
+  ],
+  "tourist": [
+    {
+      "id": "1",
+      "name": "Frida",
+      "lastName": "Vetancour",
+      "email": "correo@turiste.com",
+      "password": "turista1234",
+      "phoneNumber": 987654321,
+      "address": "callao",
+      "photo": "https://cdn1.edgedatg.com/aws/v2/abc/TheGoodDoctor/person/2198229/e8ad0dbc12cc61730e3c0d16c6f9b47b/579x579-Q90_e8ad0dbc12cc61730e3c0d16c6f9b47b.jpg"
+    },
+    {
+      "id": "2",
+      "name": "Juan",
+      "lastName": "Bautista",
+      "email": "correo@turiste.com",
+      "password": "turista",
+      "phoneNumber": 987654321,
+      "address": "callao",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3HBG7VE4Vj7zQVcxw8rM-rgpLAUWVIpQw3w&s"
+    },
+    {
+      "id": "3",
+      "name": "Linda ",
+      "lastName": "Rosaura",
+      "email": "correo@turiste.com",
+      "password": "turista",
+      "phoneNumber": 987654321,
+      "address": "callao",
+      "photo": "https://www.mundopsicologos.com/site/article/62918/52988/la-depresion-cambia-a-las-personas-10-efectos-de-este-trastorno-en-el-comportamiento-y-el-cerebro-0_ai1.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Maria Juana",
+      "lastName": "Bellido",
+      "email": "correo@turiste.com",
+      "password": "turista",
+      "phoneNumber": 987654321,
+      "address": "callao",
+      "photo": "https://static.cegos.es/content/uploads/2023/03/01165224/GettyImages-1300321639.jpg.webp"
+    }
+  ],
+  "boot": [
+    {
+      "id": "1",
+      "agencyId": 1,
+      "routeId": 1,
+      "touristId": 1,
+      "name": "bota1",
+      "state": "conectado",
+      "battery": 60
+    },
+    {
+      "id": "2",
+      "agencyId": 1,
+      "routeId": 1,
+      "touristId": 2,
+      "name": "bota1",
+      "state": "conectado",
+      "battery": 60
+    },
+    {
+      "id": "3",
+      "agencyId": 1,
+      "routeId": 2,
+      "touristId": 3,
+      "name": "bota1",
+      "state": "conectado",
+      "battery": 60
+    },
+    {
+      "id": "4",
+      "agencyId": 1,
+      "routeId": 2,
+      "touristId": 4,
+      "name": "bota1",
+      "state": "conectado",
+      "battery": 60
+    }
+  ],
+  "review": [
+    {
+      "id": "1",
+      "agencyId": 1,
+      "routeId": 1,
+      "touristId": 1,
+      "date": "1 de septiembre de 2024",
+      "score": 3,
+      "description": "I had a good experience with this service. I had never dared to do mountaineering, but with this company I have changed my way of seeing things"
+    },
+    {
+      "id": "2",
+      "agencyId": 1,
+      "routeId": 2,
+      "touristId": 2,
+      "date": "1 de septiembre de 2024",
+      "score": 4,
+      "description": "I had a good experience with this service. I had never dared to do mountaineering, but with this company I have changed my way of seeing things"
+    },
+    {
+      "id": "3",
+      "agencyId": 1,
+      "routeId": 3,
+      "touristId": 3,
+      "date": "1 de septiembre de 2024",
+      "score": 5,
+      "description": "I had a good experience with this service. I had never dared to do mountaineering, but with this company I have changed my way of seeing things"
+    },
+    {
+      "id": "20",
+      "agencyId": 1,
+      "touristId": 1,
+      "routeId": "1",
+      "date": "8 de septiembre de 2024",
+      "score": 4,
+      "description": "sssss"
+    },
+    {
+      "id": "20",
+      "agencyId": 1,
+      "touristId": 1,
+      "routeId": "1",
+      "date": "8 de septiembre de 2024",
+      "score": 2,
+      "description": "nuevo comentario"
+    },
+    {
+      "id": "20",
+      "agencyId": 1,
+      "touristId": 1,
+      "routeId": "1",
+      "date": "8 de septiembre de 2024",
+      "score": 5,
+      "description": "comentarios terminados"
+    }
+  ]
 }
