@@ -4,7 +4,7 @@ export interface Tourist {
     lastName: string,
     email: string,
     password: string,
-    phoneNumber: number,
+    phoneNumber: string,
     address: string,
     photo: string,
 }
