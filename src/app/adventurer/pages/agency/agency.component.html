@@ -1,0 +1,93 @@
+<div class="container" style="padding: 10px;">
+    <div class="information" *ngIf="agency">
+        <div class="title" >
+            <h2 style="font-weight: bold; padding-top: 10px;">{{agency.name}}</h2>
+            <hr style="border: 1px solid #367356; margin: 20px 0;">
+        </div>
+        <div class="data-agency">
+            <div style="display: flex; flex-direction: column; margin:5px 20px 5px 20px">
+                <img [src]="agency.photo" alt="{{agency.name}}" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 5px;">
+                <p> <strong>Correo:</strong> {{agency.email}}</p>
+                <p> <strong>RUC:</strong> {{agency.ruc}}</p>
+                <p> <strong>Ubicación:</strong> {{agency.location}}</p>
+                <p> <strong>Phone:</strong> {{agency.phoneNumber}}</p>
+            </div>
+            <span style="margin: 20px; padding-top: 20px;">{{agency.description}}</span>
+        </div>
+        
+    </div>
+        
+    <div class="services">
+        <div class="title">
+            <h2 style="font-weight: bold; padding-top: 10px;">Services</h2>
+            <hr style="border: 1px solid #367356; margin: 20px 0;">
+        </div>
+
+        <div class="card-gallery">
+          <button class="nav-button left" (click)="scrollLeft()">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+          </button>
+          <div class="card-container" #cardContainer>
+            <mat-card class="card" *ngFor="let route of routes" style="margin-top: 10px;">
+              <div class="imageRoute">
+                <img [src]="route.photos[0]" alt="Image of a {{ route.name }}" class="image">
+              </div>
+              <mat-card-content class="textCard">
+                <p>{{ route.name }}</p> 
+                <p>{{ route.price }}</p>
+                <div class="star-rating">
+                  <mat-icon *ngFor="let star of [].constructor(route.score); let i = index" style="color: gold;">
+                    star
+                  </mat-icon>
+                  <mat-icon *ngFor="let star of [].constructor(5 - route.score); let i = index" style="color: gold;">
+                    star_outline
+                  </mat-icon>
+                </div>
+              </mat-card-content>
+              <mat-card-actions style="display: flex; flex-direction: column; align-items: center;" [routerLink]="'/home/package/'+ route.id">
+                <button class="btn-details">more details</button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+          <button class="nav-button right" (click)="scrollRight()">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </button>
+      </div>
+        
+
+    </div>
+    
+    <div class="reviews">
+        <div class="title">
+            <h2 style="font-weight: bold; padding-top: 10px;">Reviews</h2>
+            <hr style="border: 1px solid #367356; margin: 20px 0;">
+        </div>
+
+        <div *ngFor="let review of reviews">
+          <div class="comment-box">
+            <div *ngIf="tourist" style="display: flex;">
+                <div class="profile_tourist">
+                    <img class="photoTourist" [src]="tourist.photo" alt="Image of a {{ tourist.name }}" style="width: 60px; height: 60px; border-radius: 50%;">
+                </div>
+                <div class="information-tourist" style="display: flex; flex-direction: column;">
+                    <div style="display: flex;">
+                        <span style="margin-left: 10px;"> {{ tourist.name }} {{ tourist.lastName }}</span>
+                        <div class="star-reviews" style="margin-left: 10px; height: auto;">
+                            <mat-icon *ngFor="let star of [].constructor(review.score); let i = index" style="color: gold;">
+                            star
+                            </mat-icon>
+                            <mat-icon *ngFor="let star of [].constructor(5 - review.score); let i = index" style="color: gold;">
+                            star_outline
+                            </mat-icon>
+                        </div>
+                    </div>
+                    <span style="font-size: 12px; margin-left: 10px; color: #808080;"> {{review.date}} </span>
+                </div>
+                
+            </div>
+            
+            <p>{{ review.description }}</p>
+          </div>
+        </div>
+    </div>
+</div>
