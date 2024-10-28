@@ -37,13 +37,13 @@ export class TouristService {
     .pipe(retry(2), catchError(this.handleError));
   }
 
-  getTouristsById(touristId: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/tourist/${touristId}`)
+  getTouristsById(touristId: any): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${touristId}`, this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
 
   updateTourists(touristId: number, item: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/tourist/${touristId}`,JSON.stringify(item), this.httpOptions)
+    return this.http.put(`${this.baseUrl}/${touristId}`,JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }
