@@ -1,5 +1,6 @@
 export interface Route{
     id: number,
+    agencyId: number,
     name: string,
     description: string,
     location: string,
@@ -9,5 +10,10 @@ export interface Route{
     creationDate: string,
     photos: string,
     isOffer: number,
-    isPopular: number
+    isPopular: number,
+    distance: number,
+    difficult: string,
+    altMax: number,
+    altMin: number,
+    typeRoute: string
 }
