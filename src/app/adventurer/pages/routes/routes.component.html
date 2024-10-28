@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="title">
+        <h2 style="font-weight: bold; padding-top: 10px;">Routes</h2>
+        <hr style="border: 1px solid #367356; margin: 20px 0;">
+    </div>
+    
+    
+
+    <div *ngFor="let route of routes" class="card">
+        <div class="image" [routerLink]="'/home/package/'+ route.id">
+            <img [src]="route.photos[0]" alt="Image of a {{ route.name }}" >
+        </div>
+        <div class="card-information" [routerLink]="'/home/package/'+ route.id">
+            <span>{{ route.name }}</span> 
+            <div class="information">
+                <div class="data">
+                    <p  style="font-weight: bold; color: black;">${{ route.price }}</p>
+                    <div class="star-rating">
+                        <mat-icon *ngFor="let star of [].constructor(route.score); let i = index" style="color: gold;">
+                          star
+                        </mat-icon>
+                        <mat-icon *ngFor="let star of [].constructor(5 - route.score); let i = index" style="color: gold;">
+                          star_outline
+                        </mat-icon>
+                    </div>
+                    <p>for agency ....</p>
+                </div>
+                <div class="vertical-line"></div>
+                <div class="data">
+                    <p>Dificult: {{ route.difficult }}</p>
+                    <p>Type of route: {{ route.typeRoute }}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
