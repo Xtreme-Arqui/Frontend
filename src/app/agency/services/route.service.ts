@@ -37,18 +37,18 @@ export class RouteService {
     .pipe(retry(2), catchError(this.handleError));
   }
 
-  getRouteById(routeId: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/route/${routeId}`, this.httpOptions)
+  getRouteById(routeId: any): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${routeId}`, this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
 
-  updateRoute(routeId: number, item: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/route/${routeId}`,JSON.stringify(item), this.httpOptions)
+  updateRoute(routeId: any, item: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/${routeId}`,JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 
-  deleteRoute(routeId: number, item: any): Observable<any>{
-    return this.http.delete(`${this.baseUrl}/route/${routeId}`,this.httpOptions)
+  deleteRoute(routeId: any, item: any): Observable<any>{
+    return this.http.delete(`${this.baseUrl}/${routeId}`,this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
 }

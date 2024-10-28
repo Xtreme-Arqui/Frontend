@@ -37,13 +37,13 @@ export class AgencyService {
     .pipe(retry(2), catchError(this.handleError));
   }
 
-  getAgencyById(agencyId: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/agency/${agencyId}`)
+  getAgencyById(agencyId: any): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${agencyId}`)
     .pipe(retry(2), catchError(this.handleError));
   }
 
-  updateAgency(agencyId: number, item: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/agency/${agencyId}`,JSON.stringify(item), this.httpOptions)
+  updateAgency(agencyId: any, item: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/${agencyId}`,JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
   
