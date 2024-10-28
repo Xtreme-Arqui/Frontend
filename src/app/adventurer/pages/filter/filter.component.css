@@ -1,0 +1,68 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+.title{
+    width: 95%;
+}
+
+  .image{
+    width: 20%; /* Ajusta el tamaño del contenedor */
+    height: 150px; /* Ajusta el tamaño del contenedor */
+    border-radius: 10px; /* Hace que el contenedor sea un círculo */
+    overflow: hidden; /* Oculta las partes de la imagen que excedan el círculo */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.50);
+    border-color: #F5FFFF;
+    margin: 0px 0px 15px 10px;
+    cursor: pointer;
+  }
+  
+  .image img{
+    width: 100%; /* Ajusta el tamaño de la imagen */
+    height: 150px; /* Ajusta el tamaño de la imagen */
+  }
+
+  .card {
+    width: 90%;
+    height: 150px;
+    margin: 0px 0px 20px 20px;
+    background-color: #EAEAEA;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+    padding: 15px 5px 15px 5px;
+    display: flex;
+
+  }
+  .card span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center; 
+  }
+  .card p {
+    font-family: 'Montserrat', sans-serif;
+    color: #808080;
+  }
+  .card-information {
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px 0px 0px 20px;
+    margin-left: 20px;
+    width: 72%;
+    border: 2px solid #3B8C66;
+    cursor: pointer;
+  }
+  .information {
+    display: flex;
+    margin-top: 10px;
+  }
+  .data {
+    width: 50%;
+  } 
+  .vertical-line {
+    border-left: 2px solid #808080;
+    height: 80px; /* Ajusta la altura según sea necesario */
+    margin: 0 10px; /* Añade espacio a los lados de la línea */
+
+  }
