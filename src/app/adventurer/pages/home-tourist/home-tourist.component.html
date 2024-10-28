@@ -1,0 +1,81 @@
+<mat-toolbar>
+    <button class="button-content" mat-icon-button *ngIf="!(isScreenLarge | async)" (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <img src="../../../favicon.ico" alt="Logo" class="logo" height="70px">
+      <span class="example-spacer "></span>
+
+      <button mat-button class="example-icon favorite-icon" [routerLink]="['/home/routes']">
+        <mat-icon style="size: 30px;">home</mat-icon>
+        Home
+      </button>
+      <button mat-button class="example-icon" [routerLink]="['/profile/data']">
+        <mat-icon>person</mat-icon>
+        Profile
+      </button>
+      <button mat-button class="example-icon" [routerLink]="['/profile/account']">
+        <mat-icon>exit_to_app</mat-icon>
+        Log-Out
+      </button>
+    
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container" style="width: 100%; height: calc(100% - 100px)">
+    <mat-sidenav #sidenav class="menu-items" mode="side" [opened]="isScreenLarge | async">
+        <div class="container">
+            <input class="input-search"type="text" [(ngModel)]="searchTerm" placeholder="Enter service or agency name">
+
+            <!-- Sidebar de filtros -->
+            <div class="filters">
+              <span style="font-size: 25px; font-weight:500;">Filters</span>
+              <br>
+              <!-- Filtro de precio -->
+              <label for="price">Prices:</label>
+              <div>
+                    <input class="input-price" type="number" [(ngModel)]="priceMin" placeholder="Min price">
+                    <span style="font-size: 30px; margin: 10px;">-</span>
+                    <input class="input-price" type="number" [(ngModel)]="priceMax" placeholder="Max price">
+                </div>
+              <!-- Filtro por rating -->
+              <label for="rating">Service rating:</label>
+                <div class="rating">
+                  <i *ngFor="let star of [1, 2, 3, 4, 5]; let i = index"
+                    (mouseenter)="hoverRating(i + 1)"
+                    (mouseleave)="hoverRating(0)"
+                    (click)="setRating(i + 1)"
+                    [class.filled]="i < hoverStars || i < ratingFilter">&#9733;</i>
+                </div>
+              <!-- Filtro por dificultad -->
+              <label for="difficulty">Difficult:</label>
+              <div>
+              <select class="select-filter" [(ngModel)]="difficultyFilter">
+                <option value="easy">Easy</option>
+                <option value="moderate">Moderate</option>
+                <option value="difficult">Difficult</option>
+                <option value="very difficult">Very difficult</option>
+              </select>
+            </div>
+          
+              <!-- Filtro por tipo de ruta -->
+              <label for="type">Type of route:</label>
+              <div>
+              <select class="select-filter" [(ngModel)]="typeFilter">
+                <option value="one way">One way</option>
+                <option value="round trip">Round trip</option>
+              </select>
+            </div>
+
+            <!-- Botón para aplicar el filtro -->
+              <button class="apply-filter" (click)="applyFilter()">Apply Filter</button>
+              <button class="apply-filter" (click)="resetFilter()">Reset Filter</button>
+            </div>
+          
+        </div>
+          
+    </mat-sidenav>
+  
+    <mat-sidenav-content class="content">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
