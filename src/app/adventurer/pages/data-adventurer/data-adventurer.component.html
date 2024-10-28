@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="form">
+          <div class="form-field">
+            <b>Name:</b>
+            <input type="text" required [(ngModel)]="tourist.name" [formControl]="name" [placeholder]="'tourist.name'">
+          </div>
+  
+          <div class="form-field">
+            <b>Surname:</b>
+            <input type="text" required [(ngModel)]="tourist.lastName" [formControl]="lastName" [placeholder]="'tourist.lastName'">
+          </div>
+  
+          <div class="form-field">
+            <b>Address:</b>
+            <input type="text" required [(ngModel)]="tourist.address" [formControl]="address" [placeholder]="'tourist.address'">
+          </div>
+  
+          <div class="form-field">
+            <b>Phone:</b>
+            <input type="text" required [(ngModel)]="tourist.phoneNumber" [formControl]="phoneNumber" [placeholder]="'tourist.phoneNumber'">
+          </div>
+  
+          <div class="button-center">
+            <button class="save-button" (click)="updateData()">
+              <b>SAVE</b>
+            </button>
+          </div>
+
+    </div>
+  </div>
