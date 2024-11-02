@@ -1,0 +1,36 @@
+<div class="container">
+    <form [formGroup]="agencyForm" class="form">
+        <p>Create an account</p>
+        <div>
+            <img [src]="agencyForm.get('photo')?.value" class="circle-image">
+        </div>
+        <div style="width: 100%; display: flex;">
+            <input type="text" formControlName="photo" placeholder="Image url">
+        </div>
+        <div class="data">
+            <input type="text" formControlName="name" placeholder="Nombre">
+            <input type="text" formControlName="ruc" placeholder="RUC">
+        </div>
+        <div class="info">
+            <input type="text" formControlName="phoneNumber" placeholder="Phone">
+            <input type="text" formControlName="location" placeholder="Location">
+        </div>
+        <div class="info">
+            <input type="email" formControlName="email" placeholder="Email">
+            <input type="password" formControlName="password" placeholder="Password">
+        </div>
+        <div class="social-media">
+            <input type="text" formControlName="linkF" placeholder="linkF"/>
+            <input type="text" formControlName="linkW" placeholder="linkW"/>
+            <input type="text" formControlName="linkI" placeholder="linkI"/>
+            <input type="text" formControlName="linkT" placeholder="linkT"/>
+        </div>
+        <div style="width: 100%; display: flex;">
+            <textarea rows="5" formControlName="description" placeholder="Description"></textarea>
+        </div>
+
+        <button class="button-center" (click)="saveData($event)">
+            SAVE
+          </button>
+    </form>
+</div>
