@@ -22,7 +22,7 @@
   .menu-items .mat-icon {
     height: auto;
     width: auto;
-    font-size: 80px;
+    font-size: 70px;
     color: #367356;
     margin: 10px 10px 0px 10px;
   }
@@ -34,6 +34,6 @@
     width: auto;
     color: #367356; 
     font-size: 25px;
-    padding: 5px 0px 20px 0px;
+    margin-bottom: 15px;
   }
 
