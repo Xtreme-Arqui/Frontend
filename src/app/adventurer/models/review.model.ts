@@ -5,5 +5,5 @@ export interface Review {
     touristId: number,
     date: string,
     score: number,
-    description: string
+    comment: string
 }
