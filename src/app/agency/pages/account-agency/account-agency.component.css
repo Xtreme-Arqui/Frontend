@@ -1,0 +1,44 @@
+.container{
+    padding: 20px 10px 20px 10px;
+ }
+ .circle-image{
+   width: 120px;
+   height: 120px;
+   border-radius: 50%;
+   border: 2px solid #4CAF50;
+ }
+
+ .form{
+    background-color: #EAEAEA;
+    border-radius: 20px;
+    width: 100%;
+    height: calc(100vh - 140px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .form-field{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+ }
+ .form-field input{
+    border-radius: 10px;
+    border: none;
+    height: 35px;
+    font-size: 16px;
+ }
+
+ .button-center button{
+    margin: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+  }

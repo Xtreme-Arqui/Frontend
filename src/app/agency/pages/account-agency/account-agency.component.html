@@ -1,0 +1,31 @@
+<div class="container">
+    <form class="form" [formGroup]="agencyForm">
+          <div class="form-field">
+            <div style="display: flex; justify-content:center">
+                <img [src]="agencyForm.get('photo')?.value" alt="Image of {{ agency.name }}" class="circle-image">
+            </div>
+            <b>Photo:</b>
+            <input type="text" formControlName="photo" placeholder="photo">
+          </div>
+  
+          <div class="form-field">
+            <b>Email:</b>
+            <input type="text" required formControlName="email" placeholder="email">
+          </div>
+  
+          <div class="form-field">
+            <b>Password:</b>
+            <input type="password" required formControlName="password" placeholder="password">
+          </div>
+  
+          <div class="button-center">
+            <button (click)="updateData($event)">
+              <b>SAVE</b>
+            </button>
+            <button (click)="onLogOut()">
+              <b>LOG-OUT</b>
+            </button>
+          </div>
+
+        </form>
+  </div>
