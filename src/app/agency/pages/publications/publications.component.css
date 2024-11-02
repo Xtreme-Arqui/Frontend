@@ -12,6 +12,21 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    border: 2px solid #93D94E;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #93D94E; /* Color base del botón */
+  }
+
+  .buttonAdd:hover {
+    background-color: #3c7405; /* Cambia el color de fondo en hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+  }
+
+  .buttonAdd:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Reduce la sombra */
   }
 
   .imageRoute{
@@ -41,8 +56,14 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 20px;
-    text-align: center; 
+    text-align: center;
+    white-space: nowrap; /* Evita que el texto haga un salto de línea */
+    overflow: hidden; /* Oculta el exceso de texto */
+    text-overflow: ellipsis; /* Añade puntos suspensivos al final si el texto es demasiado largo */
+    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+    margin: 0; /* Asegura que no se agreguen márgenes que desplacen el texto */
   }
+
   .textCard{
     display: flex;
     flex-direction: column;
@@ -50,7 +71,7 @@
 
   }
 
-  btn-details {
+  mat-card-actions .btn-details {
     width: 150px;
     height: 60px;
     border-radius: 15px;
@@ -60,8 +81,19 @@
     font-size: 18px;
     font-weight: 600;
     color: white;
+    transition: all 0.3s ease;
   }
 
+  mat-card-actions .btn-details:hover {
+    background-color: #3c7405; /* Cambia el color de fondo en hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+  }
 
+.card {
+    min-width: 300px; /* Asegúrate de que cada card tenga el ancho necesario */
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
 
   

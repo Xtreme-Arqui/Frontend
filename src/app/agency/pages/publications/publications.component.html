@@ -1,6 +1,6 @@
 <div>
   <h2 style="font-weight: bold; padding-top: 10px;">Publications</h2>
-  <button class="buttonAdd">
+  <button class="buttonAdd" [routerLink]="'/home/add-route'">
     <mat-icon>add</mat-icon>
   </button>
 </div>
@@ -14,7 +14,7 @@
 
     <mat-card-content class="textCard">
       <p>{{ route.name }}</p> 
-      <p>{{ route.price }}</p>
+      <p>S/.{{ route.price }}</p>
       <div class="star-rating">
         <mat-icon *ngFor="let star of [].constructor(route.score); let i = index" style="color: gold;">
           star
@@ -25,8 +25,8 @@
       </div>
       
     </mat-card-content>
-    <mat-card-actions style="display: flex; flex-direction: column; align-items: center; ">
-      <button >more details</button>
+    <mat-card-actions style="display: flex; flex-direction: column; align-items: center;" [routerLink]="'/home/route-detail/'+ route.id">
+      <button class="btn-details">more details</button>
     </mat-card-actions>
   </mat-card>
         
