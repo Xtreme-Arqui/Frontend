@@ -1,0 +1,110 @@
+.container {
+    width: 100%;
+    margin: 10px 20px;
+}
+
+.data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+
+.data.left,
+.data.right{
+    width: 50%;
+    display: flex;
+    justify-content: start;
+}
+
+input {
+    background-color: #D9D9D9;
+    border: none;
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 10px;
+    width: 50%;
+    height: 20px;
+    outline: none;
+}
+
+p {
+    font-weight: 500;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.altitude p,
+.description p, 
+.photos p {
+    width: min-content;
+    margin: 0;
+}
+
+select {
+    background-color: #D9D9D9;
+    border: none;
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 50%;
+}
+
+textarea {
+    width: 95%;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    border: none;
+}
+
+.button-add,
+.button-remove {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #93D94E;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #93D94E; /* Color base del botón */
+    color: white;
+  }
+
+  .button-add:hover,
+  .button-remove:hover {
+    background-color: #3c7405; /* Cambia el color de fondo en hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+  }
+
+  .button-add:active,
+  .button-remove:active {
+    transform: scale(0.95); /* Reduce un poco el tamaño al hacer clic */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Reduce la sombra */
+  }
+
+  .button-center {
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    background-color: #93D94E;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s ease;
+  }
+
+  .button-center:hover {
+    background-color: #3c7405; /* Cambia el color de fondo en hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+  }
+
+  .image{
+    display: flex;
+    align-items: center;
+  }
