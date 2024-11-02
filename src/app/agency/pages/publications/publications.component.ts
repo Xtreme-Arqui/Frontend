@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Route } from '../../models/route.model';
 import { RouteService } from '../../services/route.service';
+import { AuthService } from '../../../access/services/auth.service';
 
 @Component({
   selector: 'app-publications',
@@ -10,17 +11,23 @@ import { RouteService } from '../../services/route.service';
 export class PublicationsComponent implements OnInit{
   routes: Route[] = [];
   Math = Math;
+  agencyId: any;
 
-  constructor(private RouteService: RouteService){}
+  constructor(
+    private routeService: RouteService, 
+    private authService: AuthService
+  ){
+    this.agencyId = this.authService.getUserId();
+    }
 
   ngOnInit(): void {
     this.getRoutes();
   }
 
   getRoutes(): void {
-    this.RouteService.getRoutes().subscribe(
+    this.routeService.getRoutesByAgency(this.agencyId).subscribe(
       (data) => {
-        this.routes = data;
+        this.routes = data.content || [];
         console.log(this.routes);
       }
     )
