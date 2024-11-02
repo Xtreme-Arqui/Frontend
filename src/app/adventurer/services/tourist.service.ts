@@ -7,7 +7,7 @@ import { catchError, Observable, retry, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class TouristService {
-  private baseUrl:string = `${environment.baseURL}/tourist`;
+  private baseUrl:string = `${environment.baseURL}`;
 
   constructor(private http:HttpClient) { }
 
@@ -32,23 +32,29 @@ export class TouristService {
     );
   }
 
-  getTourists(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`)
-    .pipe(retry(2), catchError(this.handleError));
-  }
-
+ //GET
   getTouristsById(touristId: any): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${touristId}`, this.httpOptions)
+    return this.http.get(`${this.baseUrl}/tourists/${touristId}`, this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
-
+  //UPDATE
   updateTourists(touristId: number, item: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${touristId}`,JSON.stringify(item), this.httpOptions)
+    return this.http.put(`${this.baseUrl}/tourists/${touristId}`,JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-  
+  //DELETE
+  deleteRoute(touristId: number): Observable<any>{
+    return this.http.delete(`${this.baseUrl}/tourists/${touristId}`,this.httpOptions)
+    .pipe(retry(2), catchError(this.handleError));
+  }
+  //GET
+  getTourists(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/tourists`, this.httpOptions)
+    .pipe(retry(2), catchError(this.handleError));
+  }
+  //POST
   addTourist(item:any): Observable<any>{
-    return this.http.post(`${this.baseUrl}`,item, this.httpOptions)
+    return this.http.post(`${this.baseUrl}/tourists`,item, this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
 }
