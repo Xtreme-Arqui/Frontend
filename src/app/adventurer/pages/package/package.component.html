@@ -12,13 +12,13 @@
                   </div>
                   <div class="carousel-thumbnails">
                     <img *ngFor="let image of route.photos" [src]="image" alt="Thumbnail" 
-                         [class.active]="image === mainImage" (click)="changeMainImage(image)" />
+                         [class.active]="image === mainImage" (click)="changeMainImage(image)" loading="lazy"/>
                   </div>
             </div>
             <div class="more">
                 <div class="info" style="width: 50%;">
                                                         <!-- Cambiar por el ID de la agencia a la que pertenece -->
-                    <p>for <strong class="link_agency" [routerLink]="'/home/agency/'+ route.agencyId">agency TravelNew</strong></p>
+                    <p>for <strong class="link_agency" [routerLink]="'/home/agency/'+ agencyId">agency TravelNew</strong></p>
                     <strong style="font-size: 25px;">$ {{route.price}}</strong>
                 </div>
                 <div class="contact" style="width: 50%;">
