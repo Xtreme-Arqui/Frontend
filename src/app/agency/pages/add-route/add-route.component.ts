@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { RouteService } from '../../services/route.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../../access/services/auth.service';
 
 @Component({
   selector: 'app-add-route',
@@ -10,12 +11,15 @@ import { Router } from '@angular/router';
 })
 export class AddRouteComponent implements OnInit{
   routeForm: FormGroup;
+  agencyId: any;
 
   constructor(
     private routeService: RouteService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService,
   ) {
+    this.agencyId = this.authService.getUserId();
     this.routeForm = this.formBuilder.group({
       name: [''],
       description: [''],
@@ -55,7 +59,7 @@ export class AddRouteComponent implements OnInit{
     event.preventDefault();
     const newRoute = {
       id: '',
-      agencyId: '',
+      agencyId: this.agencyId,
       name: this.routeForm.get('name')?.value,
       description: this.routeForm.get('description')?.value,
       score: '',
@@ -69,7 +73,7 @@ export class AddRouteComponent implements OnInit{
       photos: this.routeForm.value.photos.map((photo: { url: string }) => photo.url) // Extrae solo las URLs
     };
 
-    this.routeService.addRoute(newRoute).subscribe(
+    this.routeService.addRoute(this.agencyId, newRoute).subscribe(
       response => {
         console.log('Nueva ruta añadidad: ', response);
       },
