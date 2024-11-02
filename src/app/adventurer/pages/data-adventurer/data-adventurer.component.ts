@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TouristService } from '../../services/tourist.service';
 import { Tourist } from '../../models/tourist.model';
-import { FormControl, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../access/services/auth.service';
 
 @Component({
   selector: 'app-data-adventurer',
@@ -10,76 +11,58 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './data-adventurer.component.css'
 })
 export class DataAdventurerComponent implements OnInit{
-  touristId: number = 1;
+  touristForm: FormGroup;
   tourist!: Tourist;
 
-  constructor(private touristService: TouristService, private http: HttpClient) {
-    //this.user_now = this.auth.getUser()
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private authService: AuthService,
+    private touristService: TouristService
+  ) {
+    this.touristForm = this.formBuilder.group({
+      name: [''],
+      lastName: [''],
+      address: [''],
+      phoneNumber: ['']
+    })
   }
-
-  name = new FormControl('', [Validators.required]);
-  lastName = new FormControl('', [Validators.required]);
-  address = new FormControl('', [Validators.required]);
-  phoneNumber = new FormControl('', [Validators.required]);
-  email = new FormControl('', [Validators.required]);
-
-  terms = new FormControl(false, [Validators.requiredTrue]);
-  termsError = false;
 
   ngOnInit(): void {
-    this.getTouristById();
-    if (this.tourist) {
-      this.name.setValue(this.tourist.name);
-      this.lastName.setValue(this.tourist.lastName);
-      this.address.setValue(this.tourist.address);
-      this.phoneNumber.setValue(this.tourist.phoneNumber);
-    }
-    
+    this.tourist = this.authService.getUser();
+    this.loadData();
   }
 
-  getTouristById(){
-    this.touristService.getTouristsById(this.touristId).subscribe(
-      (data) => {
-        this.tourist = data;
-        console.log(this.tourist);
-      }
-    )
-  }
-
-  updateData(){
-    const nameValue = this.name.value;
-    const lastnameValue = this.lastName.value;
-    const addressValue = this.address.value;
-    const phoneNumberValue = this.phoneNumber.value;
-
-    if(this.name.invalid || this.lastName.invalid){
-      this.name.markAsTouched();
-      this.lastName.markAsTouched();
-      this.address.markAsTouched();
-      this.phoneNumber.markAsTouched();
-      return;
+  loadData(): void {
+    if(this.tourist) {
+      this.touristForm.patchValue({
+        name: this.tourist.name,
+        lastName: this.tourist.lastName,
+        address: this.tourist.address,
+        phoneNumber: this.tourist.phoneNumber
+      })
     }
+  }
+  updateData(event: Event): void{
+    event.preventDefault();
 
-    const updatedItem = {
+    const updatedTourist = {
       id: this.tourist.id,
-      name: nameValue,
-      lastName: lastnameValue,
-      email: addressValue,
-      password: phoneNumberValue,
-      phoneNumber: this.tourist.phoneNumber,
-      address: this.tourist.address,
+      name: this.touristForm.get('name')?.value,
+      lastName: this.touristForm.get('lastName')?.value,
+      email: this.tourist.email,
+      password: this.tourist.password,
+      phoneNumber: this.touristForm.get('phoneNumber')?.value,
+      address: this.touristForm.get('address')?.value,
       photo: this.tourist.photo,
     }
 
-    this.touristService.updateTourists(1,updatedItem).subscribe(
-      (res) => {
-        console.log(updatedItem)
-        console.log("Usuario actualizado exitosamente");
+    this.touristService.updateTourists(this.tourist.id, updatedTourist).subscribe({
+      next: () => {
+        this.authService.setUser(updatedTourist);
+        this.router.navigate(['/profile/data']);
       },
-      (error) => {
-        console.log("Ocurrió un error al actualizar el usuario");
-        console.log(error);
-      }
-    );
+      error: (error) => console.error('Error al actualiza la agencia: ', error),
+    })
   }
 }
