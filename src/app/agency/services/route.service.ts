@@ -8,7 +8,7 @@ import { Route } from '../models/route.model';
   providedIn: 'root'
 })
 export class RouteService {
-  private baseUrl: string = `${environment.baseURL}/route`;
+  private baseUrl: string = `${environment.baseURL}`;
 
   constructor(private http:HttpClient) { }
 
@@ -33,28 +33,38 @@ export class RouteService {
     );
   }
 
+  //SERVICE
+  //GET
   getRoutes(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`, this.httpOptions)
+    return this.http.get(`${this.baseUrl}/services`, this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
-
+  //GET
   getRouteById(routeId: any): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${routeId}`, this.httpOptions)
+    return this.http.get(`${this.baseUrl}/services/${routeId}`, this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
 
-  updateRoute(routeId: any, item: Route): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${routeId}`,item, this.httpOptions)
+
+  //AGENCY/SERVICES
+  //UPDATE
+  updateRoute(agencyId: any, routeId: any, item: Route): Observable<any> {
+    return this.http.put(`${this.baseUrl}/agencies/${agencyId}/services/${routeId}`,item, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-
-  deleteRoute(routeId: any, item: any): Observable<any>{
-    return this.http.delete(`${this.baseUrl}/${routeId}`,this.httpOptions)
+  //DELETE
+  deleteRoute(agencyId: any, routeId: any): Observable<any>{
+    return this.http.delete(`${this.baseUrl}/agencies/${agencyId}/services/${routeId}`,this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
-
-  addRoute(item:any): Observable<any>{
-    return this.http.post(`${this.baseUrl}`,item, this.httpOptions)
+  //GET
+  getRoutesByAgency(agencyId: any): Observable<any> {
+    return this.http.get(`${this.baseUrl}/agencies/${agencyId}/services`, this.httpOptions)
+    .pipe(retry(2), catchError(this.handleError));
+  }
+  //POST
+  addRoute(agencyId: any, item:any): Observable<any>{
+    return this.http.post(`${this.baseUrl}/agencies/${agencyId}/services`,item, this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
 }
