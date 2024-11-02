@@ -1,0 +1,30 @@
+<div class="container">
+    <form [formGroup]="touristForm" class="form">
+        <p>Create an account</p>
+        <div>
+            <img [src]="touristForm.get('photo')?.value" class="circle-image">
+        </div>
+        <div style="width: 100%; display: flex;">
+            <input type="text" formControlName="photo" placeholder="Image url">
+        </div>
+        <div class="surname">
+            <input type="text" formControlName="name" placeholder="Nombre">
+            <input type="text" formControlName="lastName" placeholder="Last Name">
+        </div>
+        <div class="info">
+            <input type="text" formControlName="phoneNumber" placeholder="Phone">
+            <input type="text" formControlName="address" placeholder="address">
+        </div>
+        <div style="width: 100%; display: flex;">
+            <input type="email" formControlName="email" placeholder="email">
+        </div>
+        <div style="width: 100%; display: flex;">
+            <input type="password" formControlName="password" placeholder="password">
+        </div>
+        
+
+        <button class="button-center" (click)="saveData($event)">
+            SAVE
+          </button>
+    </form>
+</div>

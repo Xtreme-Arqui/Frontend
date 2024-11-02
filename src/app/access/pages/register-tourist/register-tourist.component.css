@@ -1,0 +1,76 @@
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background: linear-gradient(to right, #F3FFF7, #DFF2E6);
+}
+
+.form {
+    width: 70%;
+    height: 80%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    margin: 20px 0 5px 0;
+    font-size: 30px;
+}
+
+.surname,
+.info {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+input{
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    outline: none;
+}
+
+
+.circle-image{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #4CAF50;
+    margin: 10px 0;
+}
+
+.button-center {
+    background-color: #367356;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+
+  .button-center:hover {
+    background-color: #3c7405; /* Cambia el color de fondo en hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+  }
