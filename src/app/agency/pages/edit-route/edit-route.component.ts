@@ -3,6 +3,7 @@ import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { RouteService } from '../../services/route.service';
 import { Route } from '../../models/route.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../../../access/services/auth.service';
 
 @Component({
   selector: 'app-edit-route',
@@ -11,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditRouteComponent implements OnInit {
   routeId: string | null = null;
+  agencyId: any;
   routeForm: FormGroup;
   route!: Route;
 
@@ -18,8 +20,10 @@ export class EditRouteComponent implements OnInit {
     private routeService: RouteService,
     private formBuilder: FormBuilder,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthService
   ) {
+    this.agencyId = this.authService.getUserId();
     this.routeForm = this.formBuilder.group({
       name: [''],
       description: [''],
@@ -107,7 +111,7 @@ export class EditRouteComponent implements OnInit {
     }
 
     // Llama al servicio para actualizar la ruta
-    this.routeService.updateRoute(this.routeId, updatedRoute).subscribe({
+    this.routeService.updateRoute(this.agencyId ,this.routeId, updatedRoute).subscribe({
       next: () => {
         console.log('Ruta actualizada:', updatedRoute);
         this.router.navigate(['/home/route-detail/' + this.routeId]);
