@@ -22,6 +22,13 @@ import { AgencyComponent } from "./adventurer/pages/agency/agency.component";
 import { ProfileComponent } from "./adventurer/pages/profile/profile.component";
 import { DataAdventurerComponent } from "./adventurer/pages/data-adventurer/data-adventurer.component";
 import { AccountAdventurerComponent } from "./adventurer/pages/account-adventurer/account-adventurer.component";
+import { AuthComponent } from "./access/pages/auth/auth.component";
+import { AccountAgencyComponent } from "./agency/pages/account-agency/account-agency.component";
+import { AddRouteComponent } from "./agency/pages/add-route/add-route.component";
+import { EditRouteComponent } from "./agency/pages/edit-route/edit-route.component";
+import { RouteDetailComponent } from "./agency/pages/route-detail/route-detail.component";
+import { RegisterAgencyComponent } from "./access/pages/register-agency/register-agency.component";
+import { RegisterTouristComponent } from "./access/pages/register-tourist/register-tourist.component";
 
 @NgModule({
   declarations: [
@@ -39,7 +46,14 @@ import { AccountAdventurerComponent } from "./adventurer/pages/account-adventure
       AgencyComponent,
       ProfileComponent,
       DataAdventurerComponent,
-      AccountAdventurerComponent
+      AccountAdventurerComponent,
+      AuthComponent,
+      AccountAgencyComponent,
+      AddRouteComponent,
+      EditRouteComponent,
+      RouteDetailComponent,
+      RegisterAgencyComponent,
+      RegisterTouristComponent
 
     ],
     imports: [
