@@ -1,0 +1,58 @@
+/* Estilo para el contenedor de pantalla completa */
+.fullscreen-container {
+    position: relative; /* Para posicionar el botón en relación a este contenedor */
+    width: 100vw; /* Ancho completo de la ventana */
+    height: 100vh; /* Alto completo de la ventana */
+    overflow: hidden; /* Ocultar cualquier desbordamiento */
+}
+
+/* Estilo para la imagen */
+.fullscreen-image {
+    position: absolute; /* Posicionamiento absoluto para que se ajuste al contenedor */
+    top: 0; /* Sin margen superior */
+    left: 0; /* Sin margen izquierdo */
+    width: 100%; /* Ancho completo de la ventana */
+    height: 100%; /* Alto completo de la ventana */
+    object-fit: cover; /* Ajustar la imagen manteniendo su proporción */
+}
+
+/* Estilo para el botón centrado */
+.text {
+    position: absolute; /* Posicionamiento absoluto para centrar */
+    top: 50%; /* Mover hacia el medio verticalmente */
+    left: 50%; /* Mover hacia el medio horizontalmente */
+    transform: translate(-50%, -50%); /* Centrar el botón */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: white;
+    font-weight: 500;
+    font-size: 80px;
+}
+
+p {
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.center-button {
+    margin: 20px 0;
+    font-size: 16px; /* Tamaño de fuente */
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.center-button:hover {
+    background-color: black;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+  }
