@@ -4,14 +4,14 @@
       </button>
 
       <img src="../../../favicon.ico" alt="Logo" class="logo" height="70px" style="margin-left: 10px;">
-    
+
   </mat-toolbar>
-  
+
   <mat-sidenav-container class="sidenav-container" style="width: 100%; height: calc(100% - 100px)">
     <mat-sidenav #sidenav class="menu-items" mode="side" [opened]="isScreenLarge | async">
       <div class="container">
         <mat-nav-list style="display: flex; flex-direction: column;">
-  
+
           <button mat-button routerLink="/home/services" [ngStyle]="{'color': isSelected('/home/pets') ? '#042440' : ''}">
             <mat-icon [ngStyle]="{'color': isSelected('/home/services') ? '#042440' : ''}">home</mat-icon>
             Home
@@ -36,7 +36,7 @@
         </mat-nav-list>
       </div>
     </mat-sidenav>
-  
+
     <mat-sidenav-content class="content">
       <router-outlet></router-outlet>
     </mat-sidenav-content>
