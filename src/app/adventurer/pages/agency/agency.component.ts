@@ -7,6 +7,7 @@ import { ReviewService } from '../../services/review.service';
 import { Review } from '../../models/review.model';
 import { TouristService } from '../../services/tourist.service';
 import { Tourist } from '../../models/tourist.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-agency',
@@ -23,16 +24,20 @@ export class AgencyComponent implements OnInit {
   @ViewChild('cardContainer', { static: true }) cardContainer!: ElementRef;
 
   constructor (
+    private activateRoute: ActivatedRoute, 
     private agencyService: AgencyService,
     private routeService: RouteService,
     private reviewService: ReviewService,
     private touristService: TouristService) {}
 
   ngOnInit(): void {
-    this.agencyId = '1' //REMPLAZAR
+    this.activateRoute.paramMap.subscribe(params => {
+      this.agencyId = params.get('id'); // El valor de 'id'
+      console.log('ID recibido:', this.agencyId);
+    });
     this.getAgencyById();
-    this.getRoutes();
-    this.getReviews();
+    this.getRoutesByAgency();
+    this.getReviewsByAgency();
     this.getTouristById();
   }
 
@@ -54,16 +59,16 @@ export class AgencyComponent implements OnInit {
     )
   }
 
-  getRoutes(){
-    this.routeService.getRoutes().subscribe(
+  getRoutesByAgency(){
+    this.routeService.getRoutesByAgency(this.agencyId).subscribe(
       (data) => {
         this.routes = data;
       }
     )
   }
 
-  getReviews(){
-    this.reviewService.getReviews().subscribe(
+  getReviewsByAgency(){
+    this.reviewService.getReviewsByAgency(this.agencyId).subscribe(
       (data) => {
         this.reviews = data;
         console.log(this.reviews);
