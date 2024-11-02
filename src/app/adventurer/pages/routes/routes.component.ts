@@ -20,7 +20,7 @@ export class RoutesComponent implements OnInit{
   getRoutes(): void {
     this.RouteService.getRoutes().subscribe(
       (data) => {
-        this.routes = data;
+        this.routes = data.content || [];
         console.log(this.routes);
       }
     )
