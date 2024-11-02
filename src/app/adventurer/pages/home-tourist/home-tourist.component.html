@@ -3,7 +3,7 @@
         <mat-icon>menu</mat-icon>
       </button>
 
-      <img src="../../../favicon.ico" alt="Logo" class="logo" height="70px">
+      <img src="../../../favicon.ico" alt="Logo" class="logo" height="70px" style="margin-left: 10px;">
       <span class="example-spacer "></span>
 
       <button mat-button class="example-icon favorite-icon" [routerLink]="['/home/routes']">
@@ -14,7 +14,7 @@
         <mat-icon>person</mat-icon>
         Profile
       </button>
-      <button mat-button class="example-icon" [routerLink]="['/profile/account']">
+      <button mat-button class="example-icon" (click)="onLogOut()">
         <mat-icon>exit_to_app</mat-icon>
         Log-Out
       </button>

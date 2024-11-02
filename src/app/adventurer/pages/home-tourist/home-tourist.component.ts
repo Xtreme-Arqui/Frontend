@@ -6,6 +6,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { Route } from '../../../agency/models/route.model';
 import { RouteService } from '../../../agency/services/route.service';
 import { SharedDataService } from '../../services/shared-data.service';
+import { AuthService } from '../../../access/services/auth.service';
 
 @Component({
   selector: 'app-home-tourist',
@@ -35,7 +36,8 @@ export class HomeTouristComponent implements OnInit {
     private breakpointObserver: BreakpointObserver,
     private router: Router,
     private RouteService: RouteService,
-    private sharedDataService: SharedDataService
+    private sharedDataService: SharedDataService,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -117,4 +119,8 @@ export class HomeTouristComponent implements OnInit {
     return route.typeRoute.toLowerCase() === this.typeFilter.toLowerCase();
   }
 
+  onLogOut(): void {
+    this.authService.logOut();
+    console.log("se cerro la sesion")
+  }
 }
