@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TouristService } from '../../services/tourist.service';
 import { Tourist } from '../../models/tourist.model';
-import { AbstractControl, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../access/services/auth.service';
 
 @Component({
   selector: 'app-account-adventurer',
@@ -9,75 +11,58 @@ import { AbstractControl, FormControl, Validators } from '@angular/forms';
   styleUrl: './account-adventurer.component.css'
 })
 export class AccountAdventurerComponent implements OnInit{
-  touristId: number = 1;
+  touristForm: FormGroup;
   tourist!: Tourist;
-  imageUrl!: string;
 
-  constructor(private touristService: TouristService) {
-    //this.user_now = this.auth.getUser()
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private authService: AuthService,
+    private touristService: TouristService
+  ) {
+    this.touristForm = this.formBuilder.group({
+      photo: [''],
+      email: [''],
+      password: ['']
+    })
   }
-
-  photo = new FormControl('', [Validators.required]);
-  email = new FormControl('', [Validators.required, Validators.email]);
-  password = new FormControl('', [Validators.required]);
-
 
   ngOnInit(): void {
-    this.getTouristById();
-
+    this.tourist = this.authService.getUser();
+    this.loadData();
   }
 
-  getTouristById(){
-    this.touristService.getTouristsById(this.touristId).subscribe(
-      (data) => {
-        this.tourist = data;
-        console.log(this.tourist);
-        this.imageUrl = this.tourist.photo;
-        this.photo.setValue(this.tourist.photo);
-        this.email.setValue(this.tourist.email);
-        this.password.setValue(this.tourist.password);
-      }
-    )
-  }
-
-  passwordMatchValidator(control: AbstractControl) {
-    const password = control.get('password')?.value;
-    const repeatPassword = control.get('repeatPassword')?.value;
-    return password === repeatPassword ? null : { passwordMismatch: true };
-  }
-
-  updateData(){
-    const photoValue = this.photo.value;
-    const emailValue = this.email.value;
-    const passwordValue = this.password.value;
-
-    if(this.email.invalid || this.password.invalid){
-      this.photo.markAsTouched();
-      this.email.markAsTouched();
-      this.password.markAsTouched();
-      return;
+  loadData() {
+    if(this.tourist) {
+      this.touristForm.patchValue({
+        photo: this.tourist.photo,
+        email: this.tourist.email,
+        password: this.tourist.password
+      })
     }
+  }
 
-    const updatedItem = {
+  updateData(event: Event){
+    event.preventDefault();
+    
+    const updatedTourist = {
       id: this.tourist.id,
       name: this.tourist.name,
       lastName: this.tourist.lastName,
-      email: emailValue,
-      password: passwordValue,
+      email: this.touristForm.get('email')?.value,
+      password: this.touristForm.get('password')?.value,
       phoneNumber: this.tourist.phoneNumber,
       address: this.tourist.address,
-      photo: photoValue,
+      photo: this.touristForm.get('photo')?.value,
     }
 
-    this.touristService.updateTourists(1,updatedItem).subscribe(
-      (res) => {
-        console.log(updatedItem)
-        console.log("Usuario actualizado exitosamente");
+    this.touristService.updateTourists(this.tourist.id, updatedTourist).subscribe({
+      next: () => {
+        this.authService.setUser(updatedTourist);
+        console.log('Agencia actualizada:', updatedTourist);
+        this.router.navigate(['/profile/account']);
       },
-      (error) => {
-        console.log("Ocurrió un error al actualizar el usuario");
-        console.log(error);
-      }
-    );
+      error: (error) => console.error('Error al actualiza la agencia: ', error),
+    })
   }
 }

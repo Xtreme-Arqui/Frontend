@@ -32,13 +32,24 @@
     font-size: 16px;
  }
 
- .save-button {
+ .button-center {
+   display: flex;
+   
+ }
+
+ .save-button{
     margin: 20px;
     width: 100px;
-    height: 30px;
+    height: 40px;
     background-color: #4CAF50;
     border: none;
     color: white;
     border-radius: 20px;
     cursor: pointer;
   }
+
+  .save-button:hover {
+   background-color: #45a049 !important;
+   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+   transform: scale(1.1);
+ }

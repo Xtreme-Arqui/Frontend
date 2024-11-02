@@ -1,28 +1,28 @@
 <div class="container">
-    <div class="form">
+    <form class="form" [formGroup]="touristForm">
           <div class="form-field">
-            <div style="display: flex; justify-content:center" *ngIf="imageUrl">
-                <img [src]="imageUrl" alt="Image of {{ tourist.name }}" class="circle-image">
+            <div style="display: flex; justify-content:center">
+                <img [src]="touristForm.get('photo')?.value" alt="Image of {{ tourist.name }}" class="circle-image">
             </div>
             <b>Photo:</b>
-            <input type="text" required [(ngModel)]="imageUrl" [formControl]="photo" [placeholder]="'photo'">
+            <input type="text" required formControlName="photo" placeholder="photo">
           </div>
   
           <div class="form-field">
             <b>Email:</b>
-            <input type="text" required [(ngModel)]="tourist.email" [formControl]="email" [placeholder]="'email'">
+            <input type="text" required formControlName="email" placeholder="email">
           </div>
   
           <div class="form-field">
             <b>Password:</b>
-            <input type="password" required [(ngModel)]="tourist.password" [formControl]="password" [placeholder]="'password'">
+            <input type="password" required formControlName="password" placeholder="password">
           </div>
   
           <div class="button-center">
-            <button class="save-button" (click)="updateData()">
+            <button class="save-button" (click)="updateData($event)">
               <b>SAVE</b>
             </button>
           </div>
 
-    </div>
+    </form>
   </div>
