@@ -7,7 +7,7 @@ import { catchError, Observable, retry, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class AgencyService {
-  private baseUrl:string = `${environment.baseURL}/agency`;
+  private baseUrl:string = `${environment.baseURL}`;
 
   constructor(private http:HttpClient) { }
 
@@ -32,24 +32,31 @@ export class AgencyService {
     );
   }
 
-  getAgencies(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`)
-    .pipe(retry(2), catchError(this.handleError));
-  }
 
+  //AGENCIES
+  //GET
   getAgencyById(agencyId: any): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${agencyId}`)
+    return this.http.get(`${this.baseUrl}/agencies/${agencyId}`)
     .pipe(retry(2), catchError(this.handleError));
   }
-
+  //PUT
   updateAgency(agencyId: any, item: any): Observable<any> {
     return this.http.put(`${this.baseUrl}/${agencyId}`,JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-
-  addAgency(item:any): Observable<any>{
-    return this.http.post(`${this.baseUrl}`,item, this.httpOptions)
+  //DELETE
+  deleteRoute(agencyId: any): Observable<any>{
+    return this.http.delete(`${this.baseUrl}/agencies/${agencyId}`,this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
-  
+  //GET
+  getAgencies(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/agencies`)
+    .pipe(retry(2), catchError(this.handleError));
+  }
+  //POST
+  addAgency(item:any): Observable<any>{
+    return this.http.post(`${this.baseUrl}/agencies`,item, this.httpOptions)
+    .pipe(retry(2), catchError(this.handleError));
+  }
 }
