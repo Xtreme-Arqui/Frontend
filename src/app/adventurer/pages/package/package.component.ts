@@ -86,7 +86,7 @@ export class PackageComponent implements OnInit{
       routeId: this.route.id,
       date: "8 de septiembre de 2024",
       score: this.ratingFilter, 
-      description: this.comment 
+      comment: this.comment 
     }
 
     if (this.comment.trim() !== '' && this.ratingFilter > 0) {
