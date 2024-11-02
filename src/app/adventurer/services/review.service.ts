@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
+import { catchError, Observable, retry, throwError } from 'rxjs';
 import { Review } from '../models/review.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReviewService {
-  basePath: string = `${environment.baseURL}/review`;
+  baseUrl: string = `${environment.baseURL}`;
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -30,11 +30,33 @@ export class ReviewService {
     return throwError(() => new Error('Something happened with request, please try again later.'));
   }
 
-  createReview(review: Review): Observable<Review> {
-    return this.http.post<Review>(`${this.basePath}`, review);
-  }
-   
+
+  //SERVICE REVIEWS
   getReviews(): Observable<any> {
-    return this.http.get(`${this.basePath}`, this.httpOptions);
+    return this.http.get(`${this.baseUrl}/service-reviews`, this.httpOptions);
   }
+
+
+  //SERVICE / SERVICE REVIEWS
+  //UPDATE
+  updateRoute(agencyId: any, touristId: any, reviewId: any, item: Review): Observable<any> {
+    return this.http.put(`${this.baseUrl}/agency/${agencyId}/sagency-reviews/touristId=${touristId}/${reviewId}`,item, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  //DELETE
+  deleteRoute(agencyId: any, touristId: any, reviewId: any): Observable<any>{
+    return this.http.delete(`${this.baseUrl}/agency/${agencyId}/sagency-reviews/touristId=${touristId}/${reviewId}`,this.httpOptions)
+    .pipe(retry(2), catchError(this.handleError));
+  }
+  //POST
+  createReview(agencyId: any, touristId: any, review: Review): Observable<any> {
+    return this.http.post(`${this.baseUrl}/agency/${agencyId}/sagency-reviews/touristId=${touristId}`, review);
+  }
+  //GET
+  getReviewsByAgency(agencyId: any): Observable<any> {
+    return this.http.get(`${this.baseUrl}/agency/${agencyId}/sagency-reviews`, this.httpOptions)
+    .pipe(retry(2), catchError(this.handleError));
+  }
+  
+  
 }
