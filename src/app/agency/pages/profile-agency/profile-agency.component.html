@@ -1,66 +1,53 @@
-<div class="space"></div>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="mb-3 form-group">
-        <label class="form-Label1">Name</label>
-        <input type="text" readonly class="form-control" />
+<form [formGroup]="agencyForm">
+  <div class="container">
+    <div class="data">
+      <div class="left">
+        <p>Name:</p>
+        <input type="text" formControlName="name" placeholder="name"/>
+      </div>
+      <div class="right">
+        <p>RUC:</p>
+        <input type="text" formControlName="ruc" placeholder="ruc"/>
       </div>
     </div>
-    <div class="col-sm-4">
-      <div class="mb-3 form-group">
-        <label class="form-Label1">RUC</label>
-        <input type="text" readonly class="form-control" />
+  
+    <div class="data">
+      <div class="left">
+          <p>Phone</p>
+          <input type="text" formControlName="phoneNumber" placeholder="phoneNumber"/>
+      </div>
+      <div class="right">
+        <p>Location:</p>
+        <input type="text" formControlName="location" placeholder="location"/>
       </div>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="mb-3 form-group">
-        <label class="form-Label1">Phone</label>
-        <input type="text" readonly class="form-control" />
+  
+    <div class="social-links">
+      <div class="link">
+        <p>Link de Facebook:</p>
+        <input type="text" formControlName="linkF" placeholder="linkF"/>
+      </div>
+      <div class="link">
+        <p>Link de WhatsApp:</p>
+        <input type="text" formControlName="linkW" placeholder="linkW"/>
+      </div>
+      <div class="link">
+        <p>Link de Instagram:</p>
+        <input type="text" formControlName="linkI" placeholder="linkI"/>
+      </div>
+      <div class="link">
+        <p>Link de TikTok:</p>
+        <input type="text" formControlName="linkT" placeholder="linkT"/>
       </div>
     </div>
-    <div class="col-sm-4">
-      <div class="mb-3 form-group">
-        <label class="form-Label1">Location</label>
-        <input type="text" readonly class="form-control" />
-      </div>
+  
+    <div class="description">
+      <p>Description:</p>
+      <textarea rows="10" formControlName="description" placeholder="description"></textarea>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="mb-3 form-group">
-        <label class="form-Label1">Links:</label>
-        <input type="text" readonly class="form-control" />
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="mb-3 form-group">
-        <label class="form-Label1">Links:</label>
-        <input type="text" readonly class="form-control" />
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="mb-3 form-group">
-        <label class="form-Label1">Links:</label>
-        <input type="text" readonly class="form-control" />
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12">
-      <div class="col-sm-4">
-        <label class="form-Label1">Description</label>
-        <textarea readonly class="form-control" rows="10"></textarea>
-      </div>
+  
+    <div class="btn-save">
+      <button mat-flat-button class="color-button" (click)="saveData($event)">Save</button>
     </div>
   </div>
-
-  <div class="options">
-    <button mat-flat-button class="color-button">Save</button>
-  </div>
-</div>
+</form>

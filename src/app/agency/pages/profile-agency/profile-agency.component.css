@@ -1,76 +1,55 @@
-.space{
-  height: 20px;
-}
-
 .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 30px 30px 30px 30px;
+  width: 95%;
+  padding: 20px;
   border: 0px solid #ccc;
-  border-radius: 5px;
+  border-radius: 20px;
   background-color: #EAEAEA;
+  margin: 15px 0 0 0;
 }
 
-.row {
+.data .left,
+.data .right,
+.link ,
+.description{
+  flex: 1; /* Divide el espacio entre ambos divs */
+  margin: 10px 0;
+}
+
+.data, 
+.social-links {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 20px; /* Espacio entre columnas */
 }
 
-.form-Label1 {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
+p {
+  margin: 0 0 0px; /* Reduce el margen inferior para ajustar el espaciado */
+  font-size: 14px; /* Tamaño de fuente para el texto encima del input */
 }
 
-.form-control {
+input, textarea {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #0a0a0a;
-  border-radius: 10px;
-  color: #333;
+  padding: 8px;
   box-sizing: border-box;
+  border-radius: 20px;
+  border: 2px solid white;
 }
 
-.text-center {
-  text-align: center;
-  font-size: 32px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px #ccc;
-}
-
-.col-12 {
-  width: 100%;
-  margin-bottom: 20px;
-}
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.mat-mdc-button:not(:disabled) {
-  color: #efebeb;
-}
-
-.options {
-  flex-basis: 25%;
+.btn-save {
+  margin: 20px 0 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.large-textarea {
-  height: 200px;
-}
-
 .color-button {
   background-color: #4CAF50 !important;
   color: white;
+  transition: all 0.3s ease;
 }
 
 .color-button:hover {
   background-color: #45a049 !important;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+  transform: scale(1.1);
 }
 
