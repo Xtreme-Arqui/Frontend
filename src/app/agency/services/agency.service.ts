@@ -46,5 +46,10 @@ export class AgencyService {
     return this.http.put(`${this.baseUrl}/${agencyId}`,JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+
+  addAgency(item:any): Observable<any>{
+    return this.http.post(`${this.baseUrl}`,item, this.httpOptions)
+    .pipe(retry(2), catchError(this.handleError));
+  }
   
 }
