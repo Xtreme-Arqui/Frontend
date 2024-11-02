@@ -42,7 +42,7 @@ export class RegisterAgencyComponent {
       console.log(this.fakeId);
 
       const newAgency = {
-        id: this.fakeId,
+        id: '',
         name: this.agencyForm.get('name')?.value,
         email: this.agencyForm.get('email')?.value,
         password: this.agencyForm.get('password')?.value,
