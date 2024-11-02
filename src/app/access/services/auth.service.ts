@@ -34,13 +34,18 @@ export class AuthService {
 
   isEmailRegistered(email: string): Observable<boolean> {
     return this.touristService.getTourists().pipe(
-      switchMap((tourists) => {
+      switchMap((touristsResponse) => {
+        const tourists = touristsResponse.content;
         const isTouristEmailExists = tourists.some((t: any) => t.email === email);
+
         if (isTouristEmailExists) {
           return of(true);
         } else {
           return this.agencyService.getAgencies().pipe(
-            map((agencies) => agencies.some((a: any) => a.email === email))
+            map((agenciesResponse) => {
+              const agencies = agenciesResponse.content;
+              return agencies.some((a: any) => a.email === email);
+            })
           );
         }
       }),
@@ -53,7 +58,10 @@ export class AuthService {
 
   logIn(email: string, password: string): Observable<any> {
     return this.touristService.getTourists().pipe(
-      switchMap((tourists) => {
+      switchMap((touristsResponse) => {
+        console.log('Datos recibidos:', touristsResponse);
+        const tourists = touristsResponse.content;
+
         const tourist = tourists.find(
           (t: any) => t.email === email && t.password === password
         );
@@ -63,7 +71,10 @@ export class AuthService {
           return of(user);
         } else {
           return this.agencyService.getAgencies().pipe(
-            map((agencies) => {
+            map((agenciesResponse) => {
+              console.log('Datos recibidos:', agenciesResponse);
+              const agencies = agenciesResponse.content;
+
               const agency = agencies.find(
                 (a: any) => a.email === email && a.password === password
               );
