@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.development';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, retry, throwError } from 'rxjs';
+import { Route } from '../models/route.model';
 
 @Injectable({
   providedIn: 'root'
@@ -42,13 +43,18 @@ export class RouteService {
     .pipe(retry(2), catchError(this.handleError));
   }
 
-  updateRoute(routeId: any, item: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${routeId}`,JSON.stringify(item), this.httpOptions)
+  updateRoute(routeId: any, item: Route): Observable<any> {
+    return this.http.put(`${this.baseUrl}/${routeId}`,item, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 
   deleteRoute(routeId: any, item: any): Observable<any>{
     return this.http.delete(`${this.baseUrl}/${routeId}`,this.httpOptions)
+    .pipe(retry(2), catchError(this.handleError));
+  }
+
+  addRoute(item:any): Observable<any>{
+    return this.http.post(`${this.baseUrl}`,item, this.httpOptions)
     .pipe(retry(2), catchError(this.handleError));
   }
 }
