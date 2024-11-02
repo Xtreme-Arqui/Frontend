@@ -8,5 +8,9 @@ export interface Agency {
     location: string,
     ruc: number,
     photo: string,
-    score: number
+    score: number,
+    linkF: string,
+    linkW: string,
+    linkI: string,
+    linkT: string
 }
