@@ -20,7 +20,7 @@ export class MonitoringComponent implements OnInit{
   getTourists(): void {
     this.TouristService.getTourists().subscribe(
       (data) => {
-        this.tourists = data;
+        this.tourists = data.content || [];
         console.log(this.tourists);
       }
     )
