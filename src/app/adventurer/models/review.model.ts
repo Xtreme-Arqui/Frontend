@@ -1,7 +1,6 @@
 export interface Review {
-    id: number,
+    id: string,
     agencyId: number,
-    routeId: number,
     touristId: number,
     date: string,
     score: number,
