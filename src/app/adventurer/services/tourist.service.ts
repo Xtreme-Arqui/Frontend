@@ -46,4 +46,9 @@ export class TouristService {
     return this.http.put(`${this.baseUrl}/${touristId}`,JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+  
+  addTourist(item:any): Observable<any>{
+    return this.http.post(`${this.baseUrl}`,item, this.httpOptions)
+    .pipe(retry(2), catchError(this.handleError));
+  }
 }
