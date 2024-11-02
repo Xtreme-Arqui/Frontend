@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background: linear-gradient(to right, #F3FFF7, #DFF2E6);
+}
+
+.type {
+    margin: 10px 30px;
+}
+
+.card-image {
+    width: 300px;
+    height: 30%;
+    border-radius: 20px;
+}
+
+button {
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+    background: linear-gradient(to right, #3A5368, #223240);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+button:hover {
+    background-color: #45a049 !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+    transform: scale(1.05);
+}
+
+.type p {
+    margin: 10px;
+    font-size: 25px;
+    color: white;
+}
