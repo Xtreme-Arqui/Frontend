@@ -1,0 +1,61 @@
+<div class="content" *ngIf="route">
+    <div class="title">
+        <h2 style="font-weight: bold; padding-top: 10px;">{{route.name}}</h2>
+        <hr style="border: 1px solid #367356; margin: 20px 0;">
+    </div>
+
+    <div class="container">
+        <div class="left" style="width: 60%; padding-left: 10px;">
+            <div class="image-gallery">
+                <div class="main-image">
+                    <img [src]="mainImage" alt="Main image" loading="lazy"/>
+                  </div>
+                  <div class="carousel-thumbnails">
+                    <img *ngFor="let image of route.photos" [src]="image" alt="Thumbnail" 
+                         [class.active]="image === mainImage" (click)="changeMainImage(image)" />
+                  </div>
+            </div>
+            
+        </div>
+        <div class="right" style="width: 40%; padding: 20px;">
+            <div class="statistics">
+                <p class="title_statistics">Route Statistics</p>
+                <div class="colums_statistics" style="display: flex; width: 100%;">
+                    <div class="column">
+                        <span class="feature">Distance</span>
+                        <p>{{route.distance}}</p>
+                        <span class="feature">Maximum</span>
+                        <span class="feature">altitude</span>
+                        <p>{{route.altMax}}</p>
+                    </div>
+                    <div class="column">
+                        <span class="feature">Difficult</span>
+                        <p>{{route.difficult}}</p>
+                        <span class="feature">Minimum</span>
+                        <span class="feature">altitude</span>
+                        <p>{{route.altMin}}</p>
+                    </div>
+                </div>
+                <span class="feature">Type of route</span>
+                <p>{{route.typeRoute}}</p>
+
+            </div>
+            <div class="info" style="margin: 40px 0px;">
+                <p class="title_price">Information</p>
+                <div style="display: flex; margin-top: 5px;">
+                    <p style="font-size: 22px; color: #808080;">Price: </p>
+                    <p style="font-size: 22px; margin-left: 10px;"> S/. {{route.price}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="description">
+        <p class="itinerary">Itinerary description</p>
+        <p>{{route.description}}</p>
+    </div>
+
+    <button class="buttonAdd" [routerLink]="'/home/edit-route/' + routeId">
+        <mat-icon>edit</mat-icon>
+      </button>
+</div>
