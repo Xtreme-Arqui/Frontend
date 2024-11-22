@@ -1,20 +1,28 @@
 <div class="container">
 
+  <button mat-button (click)="reloadData()"><mat-icon>refresh</mat-icon></button>
+
   <div class="content">
-    <mat-card *ngFor="let tourist of tourists">
-  
+    <mat-card *ngFor="let boot of boots">
+
       <mat-card-content class="tourist-card">
         <div>
-          <img class="photoTourist" [src]="tourist.photo" alt="Image of a {{ tourist.name }}">
+          <img class="photoTourist" [src]="boot.tourist.photo" alt="Image of a {{ boot.tourist.name }}">
         </div>
 
         <div class="info">
-          <p> {{tourist.name}} </p>
+          <p> {{boot.tourist.name}} </p>
           <div class="state-device">
-            <mat-icon>bluetooth</mat-icon> <p> Connected </p> 
+            <mat-icon>bluetooth</mat-icon> <p> {{boot.state}} </p>
           </div>
           <div class="state-device">
-            <mat-icon>battery_std</mat-icon> <p> 60% </p> 
+            <mat-icon>battery_std</mat-icon> <p> {{boot.batery}} % </p>
+          </div>
+          <div class="state-device">
+            <mat-icon> directions_run</mat-icon> <p> {{boot.steps}}</p>
+          </div>
+          <div class="state-device">
+            <mat-icon>favorite</mat-icon> <p> {{boot.heartRate}}</p>
           </div>
         </div>
       </mat-card-content>
